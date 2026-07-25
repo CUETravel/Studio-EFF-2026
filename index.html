@@ -1,0 +1,1315 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Studio Theatre: Edinburgh Fringe</title>
+<meta name="description" content="Studio Theatre donor trip to the Edinburgh Festival Fringe — itinerary and trip info, August 9–15, 2026.">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#c8102e" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0d0d0d" media="(prefers-color-scheme: dark)">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Edinburgh Trip">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
+<link rel="icon" href="icons/favicon-32.png">
+<style>
+  :root{
+    --bg:#faf8f4;
+    --surface:#ffffff;
+    --surface-2:#efe9db;
+    --text:#161513;
+    --text-muted:#615c50;
+    --red:#c8102e;
+    --red-deep:#8a0b21;
+    --blue:#3757c9;
+    --black:#141311;
+    --border:#e3dcc9;
+    --shadow:rgba(30,26,18,.13);
+    --overlay:rgba(12,10,8,.68);
+    --placeholder-bg:#fbf3df;
+    --placeholder-border:#c9962e;
+    --placeholder-text:#7a5b12;
+    --highlight-bg:#f8e9ea;
+    --scheme:light;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#121110;
+      --surface:#1c1a17;
+      --surface-2:#242220;
+      --text:#f4efe4;
+      --text-muted:#b3ab99;
+      --red:#ff4d5f;
+      --red-deep:#ff8a94;
+      --blue:#7c9dff;
+      --black:#f4efe4;
+      --border:#3a3630;
+      --shadow:rgba(0,0,0,.5);
+      --overlay:rgba(0,0,0,.78);
+      --placeholder-bg:#2b2410;
+      --placeholder-border:#c9962e;
+      --placeholder-text:#e8c874;
+      --highlight-bg:#3a2226;
+      --scheme:dark;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#121110; --surface:#1c1a17; --surface-2:#242220; --text:#f4efe4; --text-muted:#b3ab99;
+    --red:#ff4d5f; --red-deep:#ff8a94; --blue:#7c9dff; --black:#f4efe4;
+    --border:#3a3630; --shadow:rgba(0,0,0,.5); --overlay:rgba(0,0,0,.78);
+    --placeholder-bg:#2b2410; --placeholder-border:#c9962e; --placeholder-text:#e8c874;
+    --highlight-bg:#3a2226;
+  }
+  :root[data-theme="light"]{
+    --bg:#faf8f4; --surface:#ffffff; --surface-2:#efe9db; --text:#161513; --text-muted:#615c50;
+    --red:#c8102e; --red-deep:#8a0b21; --blue:#3757c9; --black:#141311;
+    --border:#e3dcc9; --shadow:rgba(30,26,18,.13); --overlay:rgba(12,10,8,.68);
+    --placeholder-bg:#fbf3df; --placeholder-border:#c9962e; --placeholder-text:#7a5b12;
+    --highlight-bg:#f8e9ea;
+  }
+
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:-apple-system,"Helvetica Neue",Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;
+    overscroll-behavior-y:none;
+    padding-bottom:calc(66px + env(safe-area-inset-bottom));
+    min-height:100vh;
+  }
+  a{color:var(--red);}
+  button{font-family:inherit;}
+  em, .quote{font-style:italic;}
+
+  /* ---------- top bar ---------- */
+  .topbar{
+    position:sticky; top:0; z-index:20;
+    display:flex; align-items:center; gap:10px;
+    padding:calc(10px + env(safe-area-inset-top)) 16px 10px;
+    background:var(--bg);
+    border-bottom:2px solid var(--red);
+  }
+  .topbar .mark{
+    width:32px;height:32px;border-radius:4px;
+    background:var(--red);
+    display:flex;align-items:center;justify-content:center;
+    flex-shrink:0;
+  }
+  .topbar .mark span{color:#fff8ec;font-weight:900;font-size:13px;letter-spacing:.5px;}
+  .topbar .title{
+    font-weight:800;
+    font-size:16.5px;
+    letter-spacing:.2px;
+    text-transform:uppercase;
+  }
+  .topbar .title small{
+    display:block;
+    font-weight:600;
+    font-size:10.5px;
+    letter-spacing:.8px;
+    text-transform:none;
+    color:var(--text-muted);
+    font-style:italic;
+  }
+
+  /* ---------- views ---------- */
+  .view{display:none; padding:0 16px 28px; max-width:640px; margin:0 auto;}
+  .view.active{display:block;}
+
+  /* ---------- hero / home ---------- */
+  .hero-wrap{margin:14px -16px 0; padding:0 16px;}
+  .hero-img{
+    width:100%;
+    border-radius:10px;
+    display:block;
+    box-shadow:0 6px 18px var(--shadow);
+    border:6px solid var(--red);
+  }
+  .hero-quote{
+    text-align:center;
+    font-style:italic;
+    font-size:13.5px;
+    line-height:1.55;
+    color:var(--red);
+    margin:16px 0 18px;
+    padding:0 6px;
+  }
+  .hero-quote span{
+    display:block; margin-top:5px; font-style:normal; font-size:11px;
+    text-transform:uppercase; letter-spacing:.6px; color:var(--red);
+    font-weight:700;
+  }
+
+  .today-banner{
+    background:linear-gradient(135deg, var(--red) 0%, var(--red-deep) 100%);
+    color:#fff8ec;
+    border-radius:10px;
+    padding:14px 16px;
+    margin-bottom:16px;
+    box-shadow:0 4px 14px var(--shadow);
+  }
+  .today-banner .eyebrow{
+    font-size:10.5px; text-transform:uppercase; letter-spacing:1.5px; opacity:.9; font-weight:800;
+  }
+  .today-banner h2{margin:4px 0 2px; font-size:19px; color:#fff8ec; font-weight:800;}
+  .today-banner p{margin:0; font-size:13px; opacity:.94; line-height:1.5;}
+
+  .quicklinks{display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:6px;}
+  .quicklinks .quicklink:last-child:nth-child(odd){grid-column:1 / -1;}
+  .quicklink{
+    display:flex; align-items:center; gap:10px;
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:14px 13px;
+    text-align:left;
+    color:var(--text);
+    cursor:pointer;
+    box-shadow:0 2px 8px var(--shadow);
+  }
+  .quicklink svg{width:20px;height:20px;stroke:var(--red); flex-shrink:0;}
+  .quicklink span{font-size:13.5px; font-weight:700;}
+
+  .install-tip{
+    margin-top:18px;
+    background:var(--highlight-bg);
+    border:1px dashed var(--red);
+    border-radius:10px;
+    padding:13px 14px;
+    font-size:12.5px;
+    line-height:1.55;
+    color:var(--text-muted);
+    position:relative;
+  }
+  .install-tip b{color:var(--text);}
+  .install-tip .close-tip{
+    position:absolute; top:8px; right:10px;
+    background:none;border:none;color:var(--text-muted);
+    font-size:16px; line-height:1; cursor:pointer; padding:4px;
+  }
+
+  /* ---------- section headers ---------- */
+  .page-head{padding-top:16px; margin-bottom:14px;}
+  .page-head h1{
+    font-size:22px; margin:0 0 3px; color:var(--red);
+    font-weight:900; text-transform:uppercase; letter-spacing:.3px;
+  }
+  .page-head p{margin:0; color:var(--text-muted); font-size:13px;}
+
+  /* ---------- itinerary / days ---------- */
+  .day{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:10px;
+    margin-bottom:14px;
+    overflow:hidden;
+    box-shadow:0 2px 8px var(--shadow);
+  }
+  .day.is-today{outline:2px solid var(--red); outline-offset:-1px;}
+  .day-head{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:13px 15px;
+    cursor:pointer;
+    background:var(--red);
+    color:#fff8ec;
+  }
+  .day-head .left{display:flex; align-items:center; gap:10px;}
+  .day-num{
+    flex-shrink:0; width:30px; height:30px; border-radius:6px;
+    background:rgba(255,255,255,.16);
+    display:flex; align-items:center; justify-content:center;
+    font-weight:900; font-size:13px;
+  }
+  .day-head h3{margin:0; font-size:15.5px; font-weight:800; text-transform:uppercase; letter-spacing:.2px;}
+  .day-head .sub{font-size:11.5px; opacity:.88; font-style:italic;}
+  .today-pill{
+    background:#fff8ec; color:var(--red-deep); font-size:9.5px; font-weight:800;
+    letter-spacing:.6px; text-transform:uppercase; padding:3px 8px; border-radius:20px;
+  }
+  .chev{width:16px;height:16px; stroke:#fff8ec; transition:transform .2s ease; flex-shrink:0;}
+  .day.open .chev{transform:rotate(180deg);}
+  .day-body{display:none; padding:10px 15px 15px;}
+  .day.open .day-body{display:block;}
+
+  .day-quote{
+    font-size:12px; font-style:italic; color:var(--red); text-align:center;
+    padding:10px 0 12px; border-bottom:1px solid var(--border); margin-bottom:4px;
+    line-height:1.5;
+  }
+  .day-quote span{display:block; margin-top:2px; font-style:normal; font-size:11px; text-transform:uppercase; letter-spacing:.4px; color:var(--red); font-weight:700;}
+
+  .item{
+    display:flex; gap:12px;
+    padding:9px 0;
+    border-top:1px solid var(--border);
+    font-size:13.5px;
+    line-height:1.48;
+  }
+  .item:first-child{border-top:none;}
+  .item .time{
+    flex:0 0 72px;
+    font-weight:800;
+    font-size:11px;
+    color:var(--red-deep);
+    padding-top:1px;
+  }
+  .item.highlight{
+    background:var(--highlight-bg);
+    margin:4px -8px;
+    padding:9px 8px;
+    border-radius:8px;
+    border-top:none;
+  }
+  .item b{color:var(--text);}
+  .item .muted{color:var(--text-muted); font-size:12.5px;}
+
+  .queue-note{
+    font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:.4px;
+    color:var(--red); margin-bottom:2px;
+  }
+  .item b.queue-inline, .callout b.queue-inline{color:var(--red); font-weight:800;}
+  .item b.sum-show{color:var(--blue); font-style:italic;}
+  .sum-queue{display:block; color:var(--red); font-weight:800; font-size:9.5px; text-transform:uppercase; letter-spacing:.3px; margin-top:2px;}
+  .sum-venue{display:block; color:var(--text-muted); font-style:italic; font-size:11.5px; margin-top:2px; font-weight:400;}
+
+  .show-card{
+    display:flex; gap:11px;
+    background:var(--highlight-bg);
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:11px;
+    margin:8px 0;
+  }
+  .show-card img{
+    width:58px; height:58px; object-fit:cover; border-radius:6px; flex-shrink:0;
+    border:1px solid var(--border);
+  }
+  .show-card .show-time{font-size:12px; font-weight:800; color:var(--blue);}
+  .show-card .show-title{font-size:14px; font-weight:800; font-style:italic; margin:1px 0 1px; color:var(--blue);}
+  .show-card .show-venue{font-size:11.5px; color:var(--text-muted); font-style:italic; margin-bottom:4px;}
+  .show-card.venue-event .show-time{color:var(--red-deep);}
+  .show-card.venue-event .show-title{color:var(--text); font-style:normal;}
+  .show-card .show-desc{font-size:12.5px; line-height:1.5; color:var(--text-muted);}
+  .or-divider{
+    text-align:center; font-size:11px; font-weight:800; letter-spacing:1px; color:var(--red);
+    margin:2px 0; text-transform:uppercase;
+  }
+
+  .walk-note{
+    font-size:11.5px; font-style:italic; color:var(--text-muted);
+    padding:6px 0 6px 4px; border-left:2px solid var(--border); margin:4px 0 4px 2px; padding-left:10px;
+  }
+
+  .callout{
+    margin:10px 0; border-radius:8px; padding:11px 13px;
+    font-size:12px; line-height:1.55;
+  }
+  .callout.warn{
+    background:rgba(200,16,46,.08); border:1px solid rgba(200,16,46,.35); color:var(--red-deep);
+  }
+  .callout.info{
+    background:var(--surface-2); border-left:3px solid var(--red); color:var(--text-muted);
+  }
+
+  .notes-box{
+    margin-top:14px;
+    background:var(--surface-2);
+    border-left:3px solid var(--red);
+    border-radius:8px;
+    padding:12px 14px;
+    font-size:12.5px;
+    line-height:1.6;
+    color:var(--text-muted);
+  }
+  .notes-box b{color:var(--text);}
+  .notes-box ul{margin:0; padding-left:18px;}
+  .notes-box li{margin-bottom:5px;}
+
+  /* ---------- info ---------- */
+  .info-card{
+    background:var(--surface); border:1px solid var(--border); border-radius:10px;
+    padding:14px 16px; margin-bottom:12px; box-shadow:0 2px 8px var(--shadow);
+  }
+  .info-card h4{
+    margin:0 0 8px; font-size:11px; text-transform:uppercase; letter-spacing:1.2px; color:var(--red);
+    font-weight:800;
+  }
+  .info-card .name{font-weight:800; font-size:14.5px; margin-bottom:3px;}
+  .info-card p{margin:0; font-size:13px; line-height:1.65; color:var(--text-muted);}
+  .info-card a{text-decoration:none; font-weight:700;}
+  .info-card img{width:100%; border-radius:8px; margin-bottom:10px; display:block; border:1px solid var(--border);}
+  .info-row{display:flex; justify-content:space-between; gap:10px; padding:8px 0; border-top:1px solid var(--border); font-size:13px;}
+  .info-row:first-of-type{border-top:none;}
+  .info-row .k{font-weight:700; flex:0 0 auto;}
+  .info-row .v{color:var(--text-muted); text-align:right;}
+
+  .venue-block{padding:10px 0; border-top:1px solid var(--border);}
+  .venue-block:first-of-type{border-top:none; padding-top:0;}
+  .venue-name{font-weight:700; font-size:13.5px;}
+  .venue-tag{
+    font-size:9.5px; font-weight:800; text-transform:uppercase; letter-spacing:.4px;
+    color:var(--red); background:rgba(200,16,46,.09); border-radius:10px; padding:2px 7px; margin-left:6px;
+    display:inline-block; vertical-align:middle;
+  }
+  .venue-meta{font-size:12px; color:var(--red-deep); font-weight:700; margin-top:3px;}
+  .venue-addr{font-size:12.5px; color:var(--text-muted); margin-top:1px;}
+
+  /* ---------- museums ---------- */
+  .section-label{
+    font-size:11px; text-transform:uppercase; letter-spacing:1.2px; color:var(--red);
+    font-weight:800; margin:0 0 8px;
+  }
+  .museum-entry{padding:12px 0; border-top:1px solid var(--border);}
+  .museum-entry:first-of-type{border-top:none; padding-top:0;}
+  .museum-name{font-weight:800; font-size:14.5px;}
+  .museum-meta{font-size:11.5px; color:var(--red-deep); font-weight:700; margin-top:3px; line-height:1.5;}
+  .museum-desc{font-size:12.5px; color:var(--text-muted); line-height:1.55; margin-top:5px;}
+  .museum-desc b{color:var(--text);}
+  .museum-desc a{font-weight:700;}
+  .museum-highlights{margin:6px 0 0; padding-left:16px;}
+  .museum-highlights li{font-size:12px; color:var(--text-muted); line-height:1.5; margin-bottom:3px;}
+  .museum-highlights b{color:var(--text);}
+
+  /* ---------- restaurants ---------- */
+  .resto-context{
+    background:rgba(200,16,46,.08); border:1px solid rgba(200,16,46,.35); border-radius:8px;
+    padding:11px 13px; font-size:12.5px; line-height:1.6; color:var(--red-deep); margin-bottom:14px;
+  }
+  .resto-context b{color:var(--red-deep);}
+  .resto-row{padding:10px 0; border-top:1px solid var(--border);}
+  .resto-row:first-of-type{border-top:none; padding-top:0;}
+  .resto-top{display:flex; align-items:baseline; justify-content:space-between; gap:8px;}
+  .resto-name{font-weight:800; font-size:13.5px;}
+  .resto-rating{font-size:11px; color:var(--red); font-weight:700; white-space:nowrap;}
+  .resto-meta{font-size:11.5px; color:var(--text-muted); font-style:italic; margin-top:2px;}
+  .resto-notes{font-size:12.5px; color:var(--text-muted); line-height:1.5; margin-top:4px;}
+  .resto-notes a{font-weight:700;}
+
+  .placeholder{
+    background:var(--placeholder-bg);
+    border:1.5px dashed var(--placeholder-border);
+    border-radius:8px;
+    padding:9px 11px;
+    font-size:12px;
+    line-height:1.5;
+    color:var(--placeholder-text);
+    margin-top:6px;
+  }
+  .placeholder b{color:var(--placeholder-text);}
+  .placeholder-tag{
+    display:inline-block; font-size:9px; font-weight:800; letter-spacing:.6px; text-transform:uppercase;
+    background:var(--placeholder-border); color:#fff8ec; padding:2px 7px; border-radius:10px; margin-bottom:5px;
+  }
+
+  .speaker-row{display:flex; gap:10px; padding:9px 0; border-top:1px solid var(--border); font-size:12.5px; line-height:1.5;}
+  .speaker-row:first-of-type{border-top:none;}
+  .speaker-row .day-tag{
+    flex:0 0 64px; font-weight:800; font-size:10.5px; text-transform:uppercase; color:var(--red-deep); padding-top:1px;
+  }
+
+  .reset-note{
+    display:block; text-align:center; margin-top:6px; font-size:11.5px; color:var(--text-muted);
+  }
+
+  /* ---------- bottom nav ---------- */
+  nav.tabbar{
+    position:fixed; left:0; right:0; bottom:0; z-index:30;
+    display:flex;
+    background:var(--surface);
+    border-top:2px solid var(--red);
+    padding:6px 4px calc(6px + env(safe-area-inset-bottom));
+    box-shadow:0 -2px 10px var(--shadow);
+  }
+  nav.tabbar button{
+    flex:1; display:flex; flex-direction:column; align-items:center; gap:3px;
+    background:none; border:none; padding:7px 2px;
+    color:var(--text-muted); font-size:10px; font-weight:700; letter-spacing:.3px;
+    text-transform:uppercase;
+    cursor:pointer;
+  }
+  nav.tabbar button svg{width:21px;height:21px; stroke:var(--text-muted); fill:none; stroke-width:1.8;}
+  nav.tabbar button.active{color:var(--red);}
+  nav.tabbar button.active svg{stroke:var(--red);}
+
+  @media (prefers-reduced-motion:reduce){
+    *{transition:none !important; animation:none !important;}
+  }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="mark"><span>ST</span></div>
+  <div class="title">Edinburgh Fringe<small>Studio Theatre Donor Trip</small></div>
+</header>
+
+<!-- ============ HOME ============ -->
+<section class="view active" id="view-home">
+  <div class="hero-wrap">
+    <img class="hero-img" src="images/hero.jpg" alt="Studio Theatre: Edinburgh Festival Fringe, 9–15 August 2026">
+  </div>
+  <p class="hero-quote">"August in Edinburgh is a glorious, mad, chaotic mess of creative energy where every street corner is a stage and every pub is a theatre."<span>— Alan Cumming</span></p>
+
+  <div class="today-banner" id="today-banner">
+    <div class="eyebrow" id="today-eyebrow">Today</div>
+    <h2 id="today-title">—</h2>
+    <p id="today-desc">—</p>
+  </div>
+
+  <div class="quicklinks">
+    <button class="quicklink" data-goto="plan">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="16" rx="2.5"/><path d="M3 9.5h18M8 3v3M16 3v3"/></svg>
+      <span>Full itinerary</span>
+    </button>
+    <button class="quicklink" data-goto="summary">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h2M4 12h2M4 18h2M10 6h10M10 12h10M10 18h10"/></svg>
+      <span>Itinerary summary</span>
+    </button>
+    <button class="quicklink" data-goto="museums">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21h16M5 21V10M19 21V10M3 10l9-6 9 6M8 21v-6h8v6"/></svg>
+      <span>Museums &amp; galleries</span>
+    </button>
+    <button class="quicklink" data-goto="dining">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3v7a2 2 0 0 0 2 2v9M7 3v9M10 3v9M17 3c-1.5 0-3 1.5-3 4.5S15.5 12 17 12v9M17 3v18"/></svg>
+      <span>Restaurant suggestions</span>
+    </button>
+    <button class="quicklink" data-goto="info">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.01"/></svg>
+      <span>Trip info &amp; contacts</span>
+    </button>
+  </div>
+
+  <div class="install-tip" id="install-tip">
+    <button class="close-tip" id="install-tip-close" aria-label="Dismiss">×</button>
+    <b>Get this on your home screen:</b> in Safari, tap the Share icon, then "Add to Home Screen." It works offline once installed.
+  </div>
+</section>
+
+<!-- ============ PLAN ============ -->
+<section class="view" id="view-plan">
+  <div class="page-head">
+    <h1>The Plan</h1>
+    <p><b>Tap a day to expand. Ticketed shows are in blue. Please note you must be physically standing in the venue's queue 20-30 minutes before showtime to guarantee entry.</b></p>
+  </div>
+
+  <!-- DAY 1 -->
+  <div class="day" data-day="2026-08-09" id="day-1">
+    <div class="day-head" onclick="toggleDay('day-1')">
+      <div class="left">
+        <span class="day-num">1</span>
+        <div><h3>Sunday, August 9</h3><div class="sub">Travel Day</div></div>
+      </div>
+      <svg class="chev" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+    </div>
+    <div class="day-body">
+      <div class="day-quote">"Coming back to Edinburgh is to me like coming home."<span>— Charles Dickens</span></div>
+      <div class="item"><span class="time">All day</span><span>Various arrivals — everyone makes their own way to Edinburgh today. Group activities begin tomorrow.</span></div>
+    </div>
+  </div>
+
+  <!-- DAY 2 -->
+  <div class="day" data-day="2026-08-10" id="day-2">
+    <div class="day-head" onclick="toggleDay('day-2')">
+      <div class="left">
+        <span class="day-num">2</span>
+        <div><h3>Monday, August 10</h3><div class="sub">Welcome to Edinburgh</div></div>
+      </div>
+      <svg class="chev" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+    </div>
+    <div class="day-body">
+      <div class="day-quote">"Edinburgh in August is the only place to be. It's a hotbed of genius, a marketplace of ideas, and an absolute circus."<span>— Billy Connolly, Actor</span></div>
+      <div class="item"><span>Various arrivals at Edinburgh Airport — transfer to Old Town and The Scotsman Hotel</span></div>
+      <div class="item"><span><b>Options while waiting for check-in</b> — stretch your legs and learn the neighborhood. <b>1st Option:</b> Self-guided walkabout exploring the Royal Mile, learning more about Old Town. Gain a deeper historical perspective and appreciation of Edinburgh (witches and all!). <b>2nd Option:</b> Self-guided walkabout of the Fringe, learning a bit of history about the festival, checking out some of the venues, and gaining a better understanding of how the Fringe works. Guide booklets provided.</span></div>
+      <div class="item highlight"><span class="time">3:00 PM</span><span><b>Check-in — The Scotsman Hotel.</b> Have a bit of a rest before dinner.</span></div>
+      <div class="item"><span class="time">5:10 PM</span><span>Gather for travel to our welcome dinner at <b>The Bonham Hotel</b>, 35 Drumsheugh Gardens. The Bonham comprises three Victorian townhouses built in 1872 near Edinburgh's New Town and Dean Village. Over the years, these buildings served as a private maternity clinic, earning the nickname "Bonham Babies," then as student housing for the University of Edinburgh. In 1998, The Town House Company restored them and opened The Bonham Hotel. Richard H. Driehaus acquired the hotel in 2017, enriching it with his notable art collection.</span></div>
+      <div class="show-card venue-event">
+        <img src="images/venue-bonham-deansuite.jpg" alt="The Dean Suite at The Bonham Hotel">
+        <div>
+          <div class="show-time">5:30 PM · Drinks in the Library</div>
+          <div class="show-venue">The Bonham Hotel, 35 Drumsheugh Gardens</div>
+          <div class="show-desc">Festivities begin in <b>The Library</b> at the Bonham. Enjoy a welcome glass of prosecco and the opportunity to chat together before dinner. The Library takes its name as a subtle nod to the days when The Bonham was known as Muir Hall, when the three townhouses served as accommodation for medical students.</div>
+          <div class="show-time" style="margin-top:9px;">6:30 PM · Welcome Dinner</div>
+          <div class="show-title">Dinner in the Dean Suite for a taste of Scottish cuisine</div>
+          <div class="show-venue">The Bonham Hotel, 35 Drumsheugh Gardens</div>
+          <div class="show-desc">The Dean Suite is the hotel's largest private event space, featuring spectacular high ceilings, stunning Victorian architecture, a grand fireplace, and a beautiful bay window overlooking the private Drumsheugh Gardens.</div>
+        </div>
+      </div>
+      <div class="item"><span class="time">8:40 PM</span><span>Post-dinner, all guests return to The Scotsman by private bus (10-minute walk). Guests attending the Royal Tattoo will walk up to the Castle Esplanade for the performance.</span></div>
+      <div class="show-card">
+        <img src="images/venue-tattoo.jpg" alt="Edinburgh Royal Military Tattoo">
+        <div>
+          <div class="queue-note">In-line by 9:15 PM</div>
+          <div class="show-time">9:30 PM · Optional add-on</div>
+          <div class="show-title">Edinburgh Royal Military Tattoo</div>
+          <div class="show-venue">Castle Esplanade</div>
+          <div class="show-desc">One of the greatest shows that you can see in Scotland. The Military Tattoo is a showcase of music, dance and precision from performers all around the world. They perform against the magnificent backdrop of Edinburgh Castle.</div>
+        </div>
+      </div>
+      <div class="walk-note">10-minute walk from the Royal Tattoo back to The Scotsman Hotel</div>
+    </div>
+  </div>
+
+  <!-- DAY 3 -->
+  <div class="day" data-day="2026-08-11" id="day-3">
+    <div class="day-head" onclick="toggleDay('day-3')">
+      <div class="left">
+        <span class="day-num">3</span>
+        <div><h3>Tuesday, August 11</h3><div class="sub">Full Festival Day!</div></div>
+      </div>
+      <svg class="chev" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+    </div>
+    <div class="day-body">
+      <div class="day-quote">"The Edinburgh Fringe is the biggest explosion of performing arts on the planet. It is a completely intoxicating, chaotic, and beautiful thing."<span>— Stephen Fry, Actor</span></div>
+      <div class="item"><span class="time">7:30–9:15</span><span>Breakfast in the Grand Cafe of The Scotsman Hotel</span></div>
+      <div class="item highlight"><span class="time">9:30–11:00</span><span><b>Jura Suite talk</b> at The Scotsman Hotel with Guardian journalist <b>Mark Fisher</b>. Mark Fisher is a theatre critic, editor, feature writer and freelance journalist based in Edinburgh, Scotland. He has written about theatre in Scotland since the late-1980s, contributing theatre reviews, interviews, arts features and travel articles to newspapers and magazines in Scotland and all over the world.</span></div>
+      <div class="callout warn"><b>Reminder:</b> Almost all Fringe performances operate on General Admission seating. Your ticket guarantees you entry to the room, but not a specific seat. Fringe venues enforce a zero-tolerance lock-out policy. If you are even 30 seconds late for a performance, the doors are permanently barred, your ticket is canceled, and you will not get a refund. Because seating is entirely first-come, first-served, you must be physically standing in the venue's queue 20 to 30 minutes before showtime to guarantee entry and secure decent seats.</div>
+      <div class="item"><span class="time">11:15 AM</span><span>Stroll to George Square. It's a 15-minute walk but leaving early will give you some time to become acquainted with the George Square venues.</span></div>
+      <div class="show-card">
+        <img src="images/show-jolly-fisherman.jpg" alt="The Jolly Fisherman poster">
+        <div>
+          <div class="queue-note">In-line by 12:25 PM</div>
+          <div class="show-time">12:45–1:45 PM</div>
+          <div class="show-title">The Jolly Fisherman</div>
+          <div class="show-venue">Buttercup at Underbelly, George Square</div>
+          <div class="show-desc">From the producers of London smash-hit Brixton Calling comes a stunning new drama inspired by true events. Two boyhood best friends, Alan and Amir, fight to hold their friendship together as their worlds pull them apart. Starring Alex Hill and Jonny Khan.</div>
+        </div>
+      </div>
+      <div class="item"><span class="time">2:00–4:30</span><span><b>FREE TIME - Enjoy the Adventure!</b> Take a break. Have lunch. Consider adding an additional show in the George Square area or on your way to the Lennox Theatre. It's a 20-minute walk from George Square to the Lennox Theatre. Make sure the end time of any performance you add allows you to travel to the Edinburgh International Conference Center (where the Lennox Theatre is) and have you join the ticket holder line by 5:10 PM.</span></div>
+      <div class="show-card">
+        <img src="images/show-dracula.jpg" alt="Dracula: Lucy's Dream poster">
+        <div>
+          <div class="queue-note">In-line by 5:10 PM</div>
+          <div class="show-time">5:30–6:30 PM (17:30)</div>
+          <div class="show-title">Dracula: Lucy's Dream</div>
+          <div class="show-venue">Lennox Theatre at Pleasance at EICC, 150 Morrison St</div>
+          <div class="show-desc">Award-winning company Plexus Polaire delivers a haunting, wordless re-imagining of Dracula. Blending life-sized puppets, live performers, and cinematic video, this gothic horror charts Lucy Westenra's intoxicating descent into desire, control, and nightmare. A dark, sensual, and visually breathtaking production.</div>
+        </div>
+      </div>
+      <div class="walk-note">17-minute walk to dinner</div>
+      <div class="show-card venue-event">
+        <img src="images/venue-divino.jpg" alt="Divino Enoteca exterior">
+        <div>
+          <div class="show-time">7:00–8:45 PM · Group Dinner</div>
+          <div class="show-title">Divino Enoteca</div>
+          <div class="show-venue">5 Merchant St</div>
+          <div class="show-desc">The elegant enoteca is tucked away underneath George IV Bridge just off the Grassmarket. It's an almost secret location but descend the steps from cobbled Merchant Street and you enter a warm wine cellar of soft lighting, polished surfaces, jazzy fabrics, clinking glasses and delicious Italian food.</div>
+        </div>
+      </div>
+      <div class="item"><span class="time">8:45 PM</span><span>Depart for your post-dinner choices — <b class="queue-inline">in-line by 9:10 PM</b> for either show. HOLE! is a 5-minute walk; David Elms is a 12-minute walk.</span></div>
+      <div class="show-card">
+        <img src="images/show-hole.jpg" alt="HOLE! poster">
+        <div>
+          <div class="show-time">9:30–10:50 PM (21:30)</div>
+          <div class="show-title">HOLE!</div>
+          <div class="show-venue">Cowbarn at Underbelly, Bristo Square</div>
+          <div class="show-desc">A Nebraska cult wears butt plugs to stop God from sucking them, ass-first, into the sun — and the crazy thing is, they're right. Hole! is an epic apocalyptic love story about the only people left on Earth: fanatical puritans and anyone else caught doing butt stuff during "The Great Sucking." Post show — a 10-minute walk back to the hotel.</div>
+        </div>
+      </div>
+      <div class="or-divider">— or —</div>
+      <div class="show-card">
+        <img src="images/show-david-elms.jpg" alt="David Elms Describes a Room poster">
+        <div>
+          <div class="show-time">9:30–10:30 PM (21:30)</div>
+          <div class="show-title">David Elms Describes a Room</div>
+          <div class="show-venue">Upstairs at Pleasance Courtyard</div>
+          <div class="show-desc">The sell-out cult hit returns! Join veteran improviser David Elms as he crafts a uniquely hilarious comedy mind palace live with the audience. The Guardian calls it "a lesson in collective imagining," while Chortle hails it as "one of the most original and artistic comedy shows on the Fringe." Post show — an 11-minute walk back to the hotel.</div>
+        </div>
+      </div>
+      <div class="or-divider">— or —</div>
+      <div class="item"><span><b>Take the night off</b> and head back to The Scotsman — a 10-minute walk from Divino Enoteca back to the hotel.</span></div>
+    </div>
+  </div>
+
+  <!-- DAY 4 -->
+  <div class="day" data-day="2026-08-12" id="day-4">
+    <div class="day-head" onclick="toggleDay('day-4')">
+      <div class="left">
+        <span class="day-num">4</span>
+        <div><h3>Wednesday, August 12</h3><div class="sub">Another Festival Day!</div></div>
+      </div>
+      <svg class="chev" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+    </div>
+    <div class="day-body">
+      <div class="day-quote">"There is an energy in the Edinburgh air in August that doesn't exist anywhere else. It is a city entirely consumed by the joy of performance."<span>— Emma Thompson</span></div>
+      <div class="item"><span class="time">7:30–9:15</span><span>Breakfast in the Grand Cafe of The Scotsman Hotel</span></div>
+      <div class="item highlight"><span class="time">9:30–11:00</span><span><b>Jura Suite talk</b> at The Scotsman Hotel with <b>Francesca Moody</b>, Fringe producer and producer of Studio's <i>Feeling Afraid</i>. Francesca Moody MBE is a British producer known for staging theatrical versions of Fleabag and Baby Reindeer (both adapted for TV) at the Edinburgh Festival Fringe. She also produced the musical Kathy and Stella Solve a Murder (2022) and the play Weather Girl (2024). Her work draws attention from audiences, performers, and critics at the Fringe.</span></div>
+      <div class="item"><span class="time">11:00–5:30</span><span><b>Afternoon free.</b> Explore one of the many museums or galleries that Edinburgh has to offer. <b>Or</b> try one of the Self-Guided Walkabouts and get to know the city better. <b>Or</b> head into the Fringe for a deeper look! You can focus your exploration on specific shows suggested by David Muse or recommended reviews, or you can focus your exploration on specific venues/areas and see multiple shows without having to travel far between shows.</span></div>
+      <div class="callout warn">You need to be <b class="queue-inline">in-line by 5:30 PM</b> at TechCube 0 at Summerhall. Clusters of venues near Summerhall are Summerhall, George Square, or Pleasance Courtyard. Since we have two evening shows during typical dinner hours, consider when you'll refuel — you can snack and have a really early dinner, or wait until after the 2nd show (there are several restaurants near The Scotsman that continue to serve after 9 PM).</div>
+      <div class="show-card">
+        <img src="images/show-roleplay.jpg" alt="Roleplay poster">
+        <div>
+          <div class="queue-note">In-line by 5:30 PM</div>
+          <div class="show-time">5:50–7:00 PM (17:50)</div>
+          <div class="show-title">Roleplay</div>
+          <div class="show-venue">TechCube 0 at Summerhall</div>
+          <div class="show-desc">From the award-winning producers of Fleabag and Baby Reindeer comes a darkly hilarious, NSFW one-woman show. A broke feminist podcaster turns "slutfluencer" in pursuit of fame, unleashing a ferocious interrogation of modern sex, personal branding, and the commodification of feminism.</div>
+        </div>
+      </div>
+      <div class="callout warn">Fringe venues require all audience members to exit completely between performances so the crew can reset the stage, clean up, and allow the next queue to enter.</div>
+      <div class="show-card">
+        <img src="images/show-lions.jpg" alt="Lions poster">
+        <div>
+          <div class="queue-note">In-line by 7:10 PM</div>
+          <div class="show-time">7:30–8:30 PM (19:30)</div>
+          <div class="show-title">Lions</div>
+          <div class="show-venue">TechCube 0 at Summerhall</div>
+          <div class="show-desc">Fringe First winners return with Lions, a darkly hilarious comedy about the business of letting our dads die. Blending clowning, a dose of Kafka, and a deconstructed eulogy, the show disassembles the myths our fathers told themselves. From the award-winning creators of Underground Railroad Game — a production the Philadelphia Inquirer called deeply moving and hilarious.</div>
+        </div>
+      </div>
+      <div class="item"><span><b>Post-show:</b> a private bus will return the group to the hotel (10-minute ride) for late dinner on your own in the area. We suggest that you make a reservation in advance. Please let us know if you will not be taking the bus back to The Scotsman.</span></div>
+    </div>
+  </div>
+
+  <!-- DAY 5 -->
+  <div class="day" data-day="2026-08-13" id="day-5">
+    <div class="day-head" onclick="toggleDay('day-5')">
+      <div class="left">
+        <span class="day-num">5</span>
+        <div><h3>Thursday, August 13</h3><div class="sub">Village Break &amp; Pleasance</div></div>
+      </div>
+      <svg class="chev" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+    </div>
+    <div class="day-body">
+      <div class="day-quote">"This profusion of eccentricities, this city of contrasts... the Old Town, smoky, smelly, and sublime; the New Town, cold, classical, and correct."<span>— Robert Louis Stevenson, Poet</span></div>
+      <div class="item"><span class="time">7:00–10:30</span><span>Breakfast in the Grand Cafe of The Scotsman Hotel</span></div>
+      <div class="show-card venue-event">
+        <img src="images/venue-dean-village.jpg" alt="Dean Village">
+        <div>
+          <div class="show-time">10:05 gather · 10:10 depart · Add-on</div>
+          <div class="show-title">Walking Tour of Dean Village</div>
+          <div class="show-venue">Dean Village</div>
+          <div class="show-desc">Few parts of Edinburgh are as picturesque as Dean Village. Once beyond the city's edge, "the Dean" is now a tucked-away gem, with 17th-century architecture, green space and the Water of Leith running through it. As you wander, watch for herons, woodpeckers, kingfishers and even otters — in the city centre! You may even spot a waterfall or two. Follow the river into Stockbridge, officially Scotland's least deprived district and a lovely place to linger, with independent shops, artisan bakeries, restaurants and pubs. From there, it's on to the New Town — but don't let the name fool you. Dating back to the 1760s, it has a rich story shaped by inventors, scientists and big thinkers.</div>
+        </div>
+      </div>
+      <div class="item"><span class="time">10:00–2:45</span><span><b>Find a new adventure.</b> Explore one of the many museums or galleries that Edinburgh has to offer. <b>Or</b> try one of the Self-Guided Walkabouts and get to know the city better. <b>Or</b> experience <b>Dazzle Edinburgh 2026</b>, returning to Dovecot Studios on Infirmary Street for its 44th year, running August 7–30, open daily 10am–5:30pm with free entry and no booking required. It will feature 55 contemporary jewelers showing over 2,000 pieces, all available for sale. This is a beloved and long-running fixture of the August festival season. Founded in 1981 and first shown in Edinburgh in 1983, Dazzle has become a much-anticipated highlight of the festival calendar, celebrated for championing independent design and pushing the boundaries of wearable art. <b>Or</b> head into the Fringe for a deeper look! You can focus your exploration on specific shows suggested by David Muse or recommended reviews, or you can focus your exploration on specific venues/areas and see multiple shows without having to travel far between shows.</span></div>
+      <div class="item highlight"><span class="time">2:45 PM</span><span>We'll gather at The Scotsman to walk to The Colonnades at the Signet Library in Parliament Square. If you're going directly to The Colonnades from your activities, please be there no later than 2:55 PM — please let us know if you're going there directly.</span></div>
+      <div class="show-card venue-event">
+        <img src="images/venue-colonnades.jpg" alt="The Colonnades at the Signet Library">
+        <div>
+          <div class="show-time">3:00–5:00 PM · Afternoon Tea</div>
+          <div class="show-title">The Colonnades</div>
+          <div class="show-venue">Signet Library, Parliament Square</div>
+          <div class="show-desc">Experience the elegance of Colonnades Afternoon Tea in the heart of Edinburgh's Old Town, adjacent to St Giles Cathedral. Nestled within the renowned Signet Library, one of Edinburgh's finest Georgian buildings, the tearoom features ornate columns and a soaring ceiling, creating the perfect setting to enjoy a delightful afternoon.</div>
+        </div>
+      </div>
+      <div class="walk-note">5-minute walk from The Colonnades to the Main Hall at Assembly Hall</div>
+      <div class="show-card">
+        <img src="images/show-ten-thousand-hours.jpg" alt="Ten Thousand Hours poster">
+        <div>
+          <div class="queue-note">In-line by 5:10 PM</div>
+          <div class="show-time">5:30–6:30 PM (17:30)</div>
+          <div class="show-title">Ten Thousand Hours</div>
+          <div class="show-venue">Main Hall at Assembly Hall</div>
+          <div class="show-desc">Following their sold-out 2025 run, circus ensemble Gravity &amp; Other Myths returns with Ten Thousand Hours. An ode to the dedication behind greatness, this jaw-dropping acrobatic performance is what The Scotsman calls a "breathtaking display of skill and emotional courage."</div>
+        </div>
+      </div>
+      <div class="walk-note">20-minute walk from Assembly Hall to Pleasance One at Pleasance Courtyard (or a 10-minute walk from The Scotsman to Pleasance One at Pleasance Courtyard)</div>
+      <div class="show-card">
+        <img src="images/show-ahir-shah.jpg" alt="Ahir Shah's Golden poster">
+        <div>
+          <div class="queue-note">In-line by 7:10 PM</div>
+          <div class="show-time">7:30–8:30 PM (19:30)</div>
+          <div class="show-title">Ahir Shah's Golden</div>
+          <div class="show-venue">Pleasance One at Pleasance Courtyard</div>
+          <div class="show-desc">Following his Edinburgh Comedy Award-winning Netflix smash Ends, Ahir Shah returns to tackle love, family, fear, and frogs. A familiar face from Live at the Apollo and QI, this five-star master of stand-up delivers a brilliantly funny performance that The Guardian and The Telegraph rave is essential viewing.</div>
+        </div>
+      </div>
+      <div class="walk-note">Both shows are in the Pleasance Courtyard — 1–2 minutes apart from each other</div>
+      <div class="show-card">
+        <img src="images/show-garry-starr.jpg" alt="Garry Starr: Classic Penguins poster">
+        <div>
+          <div class="queue-note">In-line by 9:00 PM</div>
+          <div class="show-time">9:20–10:30 PM (21:20)</div>
+          <div class="show-title">Garry Starr: Classic Penguins</div>
+          <div class="show-venue">Grand at Pleasance Courtyard</div>
+          <div class="show-desc">International sell-out sensation Garry Starr is back to save literature by performing every Penguin Classic novel ever written — mostly naked. From Moby Dick to The Little Prince, this "ingenious comic" (Guardian) lampoons the classics with a night of euphoric chaos and brilliant nincompoopery.</div>
+        </div>
+      </div>
+      <div class="walk-note">10-minute walk from Pleasance Courtyard to The Scotsman Hotel</div>
+    </div>
+  </div>
+
+  <!-- DAY 6 -->
+  <div class="day" data-day="2026-08-14" id="day-6">
+    <div class="day-head" onclick="toggleDay('day-6')">
+      <div class="left">
+        <span class="day-num">6</span>
+        <div><h3>Friday, August 14</h3><div class="sub">Making the Most of the Day</div></div>
+      </div>
+      <svg class="chev" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+    </div>
+    <div class="day-body">
+      <div class="day-quote">"This is a city of shifting light, of changing skies, of sudden vistas. A city so beautiful it breaks the heart again and again."<span>— Alexander McCall Smith, Author</span></div>
+      <div class="item"><span class="time">7:30–9:15</span><span>Breakfast in the Grand Cafe — please bring whatever you need for the day; we leave at 10:55.</span></div>
+      <div class="item highlight"><span class="time">9:30–10:45</span><span><b>Jura Suite talk</b> at The Scotsman Hotel with <b>Sivan Batat</b>, Director — a theater director and community organizer who developed Heroes of the Fourth Turning (Studio Theatre) and has worked with Roundabout, NYTW, Drama League, Atlantic, Ars Nova, National Queer Theatre, New Georges, New York Stage &amp; Film, Cape Cod Theatre Project, MCC and more.</span></div>
+      <div class="item"><span class="time">10:50 AM</span><span>Gather for bus transfer</span></div>
+      <div class="item"><span class="time">10:55 AM</span><span>Travel from The Scotsman to the Traverse Theatre (10–15 minutes depending on traffic)</span></div>
+      <div class="show-card">
+        <img src="images/show-after-party.jpg" alt="After Party poster">
+        <div>
+          <div class="queue-note">In-line by 11:10 AM</div>
+          <div class="show-time">11:30 AM–1:20 PM</div>
+          <div class="show-title">After Party</div>
+          <div class="show-venue">Traverse 1 at Traverse Theatre, 10 Cambridge St</div>
+          <div class="show-desc">Matriarch Vivienne Blackwood has always lived life on her own terms, much to the frustration of her fractured family. Summoning them for her 80th birthday party, they arrive expecting the usual family escapades. But as old tensions surface and beliefs collide, Vivienne's reasons for gathering them soon unravels. She wants the party of a lifetime — but can her wayward family make it through the night? Sharp, darkly funny and unflinching, After Party is a bold and life-affirming story about a life-ending decision, and our responsibility to others, in life and in death.</div>
+        </div>
+      </div>
+      <div class="item"><span class="time">1:30–3:10</span><span>Short break for refueling</span></div>
+      <div class="show-card">
+        <img src="images/show-bog-witch.jpg" alt="Bog Witch poster">
+        <div>
+          <div class="queue-note">In-line by 3:10 PM</div>
+          <div class="show-time">3:30–4:50 PM (15:30)</div>
+          <div class="show-title">Bog Witch</div>
+          <div class="show-venue">Traverse 1 at Traverse Theatre, 10 Cambridge St</div>
+          <div class="show-desc">Following a hugely critically acclaimed London run, legendary performance artist Bryony Kimmings returns to the Fringe. Bog Witch follows part of Kimmings' real-life story, the journey of uprooting her and her son's lives to live in a tumbledown cottage in the wilderness, to plug back into nature as a last-ditch attempt to be happy and sane. "Haunting and hilarious... a climate reckoning of both cosmic and quotidian proportions — and a theatrical time capsule of the way we live now" ★★★★ (Guardian).</div>
+        </div>
+      </div>
+      <div class="item"><span>Post-show: gather for bus transfer. Travel from The Scotsman to <b>The Glasshouse</b>, 2 Greenside Place (10–15 minutes depending on traffic).</span></div>
+      <div class="show-card venue-event">
+        <img src="images/venue-glasshouse.jpg" alt="The Glasshouse exterior">
+        <div>
+          <div class="show-time">5:20 PM · Farewell Group Dinner</div>
+          <div class="show-title">The Glasshouse — Whisky &amp; Bagpipe Experience</div>
+          <div class="show-venue">2 Greenside Place</div>
+          <div class="show-desc">The Glasshouse is famous for its striking design as it combines a neo-Gothic 170-year-old stone church façade with sleek, modern glass architecture. We're closing off our week in Scotland in Scottish style — with a live bagpiper, a welcome whisky cocktail, and a three-course dinner where every dish is paired with a carefully chosen Scotch. Throughout the meal, an expert host will guide us through each whisky's origins and flavors, so whether you're a seasoned malt enthusiast or a complete newcomer, you'll leave with a deeper appreciation for Scotland's most famous export. Convivial, delicious, and genuinely unforgettable.</div>
+        </div>
+      </div>
+      <div class="walk-note">After dinner: an easy 13-minute stroll back to The Scotsman Hotel</div>
+    </div>
+  </div>
+
+  <!-- DAY 7 -->
+  <div class="day" data-day="2026-08-15" id="day-7">
+    <div class="day-head" onclick="toggleDay('day-7')">
+      <div class="left">
+        <span class="day-num">7</span>
+        <div><h3>Saturday, August 15</h3><div class="sub">Safe Travels Home</div></div>
+      </div>
+      <svg class="chev" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+    </div>
+    <div class="day-body">
+      <div class="day-quote">"There's no leaving Edinburgh. No shifting it around: it stays with you, always."<span>— Alan Bold, Scottish Poet</span></div>
+      <div class="item"><span class="time">7:00–10:30</span><span>Breakfast in the Grand Cafe of The Scotsman Hotel</span></div>
+      <div class="placeholder"><span class="placeholder-tag">Add details</span><br>Transfer times to Edinburgh Airport — to be confirmed based on flight times.</div>
+      <div class="item" style="margin-top:10px;"><img src="images/venue-castle-sunset.jpg" alt="Edinburgh Castle at sunset" style="width:100%;border-radius:10px;border:1px solid var(--border);"></div>
+      <div class="notes-box" style="text-align:center; border-left:none; border-top:3px solid var(--red);"><b>Safe travels home!</b> Thank you for a wonderful week at the Fringe.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INFO ============ -->
+<section class="view" id="view-info">
+  <div class="page-head">
+    <h1>Trip Info</h1>
+    <p>Hotel, contacts, venues, and things worth knowing.</p>
+  </div>
+
+  <div class="info-card">
+    <img src="images/venue-scotsman.jpg" alt="The Scotsman Hotel exterior">
+    <h4>Hotel</h4>
+    <div class="name">The Scotsman Hotel</div>
+    <p>20 North Bridge, Edinburgh<br>
+    <a href="tel:+441315565565">+44 131 556 5565</a><br>
+    Home base for the week — breakfast in the Grand Cafe, and the Jura Suite hosts our morning talks.</p>
+  </div>
+
+  <div class="info-card">
+    <h4>CUE Contacts</h4>
+    <div class="info-row"><span class="k">Sarah Dovere</span><span class="v"><a href="tel:+18565341011">+1 856 534 1011</a></span></div>
+    <div class="info-row"><span class="k">Debbie Pressman</span><span class="v"><a href="tel:+19172820631">+1 917 282 0631</a></span></div>
+  </div>
+
+  <div class="info-card">
+    <h4>Speakers This Week — Jura Suite</h4>
+    <div class="speaker-row"><span class="day-tag">Tue 8/11</span><span><b>Mark Fisher</b> — Guardian theatre critic, writing about Scottish theatre since the late 1980s.</span></div>
+    <div class="speaker-row"><span class="day-tag">Wed 8/12</span><span><b>Francesca Moody MBE</b> — Fringe producer (Fleabag, Baby Reindeer) and producer of Studio's <i>Feeling Afraid</i>.</span></div>
+    <div class="speaker-row"><span class="day-tag">Fri 8/14</span><span><b>Sivan Batat</b> — Director, Heroes of the Fourth Turning (Studio Theatre) and more.</span></div>
+  </div>
+
+  <div class="info-card">
+    <h4>Dinner &amp; Event Venues</h4>
+    <div class="venue-block">
+      <div class="venue-name">The Bonham Hotel <span class="venue-tag">Welcome Dinner</span></div>
+      <div class="venue-meta">Mon, Aug 10 · 5:30 PM · Drinks in the Library</div>
+      <div class="venue-meta">Mon, Aug 10 · 6:30 PM · Dinner in the Dean Suite</div>
+      <div class="venue-addr">35 Drumsheugh Gardens</div>
+    </div>
+    <div class="venue-block">
+      <div class="venue-name">Divino Enoteca <span class="venue-tag">Group Dinner</span></div>
+      <div class="venue-meta">Tue, Aug 11 · 7:00–8:45 PM</div>
+      <div class="venue-addr">5 Merchant St</div>
+    </div>
+    <div class="venue-block">
+      <div class="venue-name">The Colonnades <span class="venue-tag">Afternoon Tea</span></div>
+      <div class="venue-meta">Thu, Aug 13 · 3:00–5:00 PM</div>
+      <div class="venue-addr">Signet Library, Parliament Sq</div>
+    </div>
+    <div class="venue-block">
+      <div class="venue-name">The Glasshouse <span class="venue-tag">Farewell Dinner</span></div>
+      <div class="venue-meta">Fri, Aug 14 · 5:20 PM · Whisky &amp; Bagpipe Experience</div>
+      <div class="venue-addr">2 Greenside Place</div>
+    </div>
+  </div>
+
+  <div class="info-card">
+    <h4>Fringe Rules to Know</h4>
+    <p style="margin-bottom:8px;">Almost all Fringe performances are General Admission — your ticket guarantees entry to the room, not a specific seat.</p>
+    <p style="margin-bottom:8px;"><b>Zero-tolerance lock-out:</b> even 30 seconds late and the doors are barred, your ticket is canceled, and there's no refund. Be in line 20–30 minutes before showtime.</p>
+    <p>Venues require the full audience to exit between performances so the crew can reset — don't expect to hold a seat between back-to-back shows.</p>
+  </div>
+</section>
+
+<!-- ============ SUMMARY ============ -->
+<section class="view" id="view-summary">
+  <div class="page-head">
+    <h1>Itinerary Summary</h1>
+    <p>Time and headline only. See the Plan tab for full details.</p>
+  </div>
+
+  <div class="day open">
+    <div class="day-head">
+      <div class="left"><span class="day-num">1</span><div><h3>Sunday, August 9</h3><div class="sub">Travel Day</div></div></div>
+    </div>
+    <div class="day-body">
+      <div class="item"><span class="time">All day</span><span>Various arrivals in Edinburgh</span></div>
+    </div>
+  </div>
+
+  <div class="day open">
+    <div class="day-head">
+      <div class="left"><span class="day-num">2</span><div><h3>Monday, August 10</h3><div class="sub">Welcome to Edinburgh</div></div></div>
+    </div>
+    <div class="day-body">
+      <div class="item"><span class="time">3:00 PM</span><span>Check-in — The Scotsman Hotel</span></div>
+      <div class="item"><span class="time">5:10 PM</span><span>Depart for welcome dinner at The Bonham Hotel</span></div>
+      <div class="item"><span class="time">5:30 PM</span><span>Drinks in the Library, Bonham Hotel</span></div>
+      <div class="item"><span class="time">6:30 PM</span><span>Dinner in the Dean Suite, Bonham Hotel</span></div>
+      <div class="item"><span class="time">8:40 PM</span><span>Return to The Scotsman</span></div>
+      <div class="item"><span class="time">9:30 PM<span class="sum-queue">Line 9:15</span></span><span>Optional — <b class="sum-show">Edinburgh Royal Military Tattoo</b><span class="sum-venue">Castle Esplanade</span></span></div>
+    </div>
+  </div>
+
+  <div class="day open">
+    <div class="day-head">
+      <div class="left"><span class="day-num">3</span><div><h3>Tuesday, August 11</h3><div class="sub">Full Festival Day!</div></div></div>
+    </div>
+    <div class="day-body">
+      <div class="item"><span class="time">7:30 AM</span><span>Breakfast, Grand Cafe</span></div>
+      <div class="item"><span class="time">9:30 AM</span><span>Jura Suite — Mark Fisher</span></div>
+      <div class="item"><span class="time">11:15 AM</span><span>Stroll to George Square</span></div>
+      <div class="item"><span class="time">12:45 PM<span class="sum-queue">Line 12:25</span></span><span><b class="sum-show">The Jolly Fisherman</b><span class="sum-venue">Buttercup at Underbelly, George Square</span></span></div>
+      <div class="item"><span class="time">2:00 PM</span><span>Free time — Enjoy the festivities</span></div>
+      <div class="item"><span class="time">5:30 PM<span class="sum-queue">Line 5:10</span></span><span><b class="sum-show">Dracula: Lucy's Dream</b><span class="sum-venue">Lennox Theatre at Pleasance at EICC</span></span></div>
+      <div class="item"><span class="time">7:00 PM</span><span>Dinner — Divino Enoteca</span></div>
+      <div class="item"><span class="time">9:30 PM<span class="sum-queue">Line 9:10</span></span><span><b class="sum-show">HOLE!</b> at Underbelly or <b class="sum-show">David Elms Describes a Room</b> at Pleasance Courtyard (choice)</span></div>
+    </div>
+  </div>
+
+  <div class="day open">
+    <div class="day-head">
+      <div class="left"><span class="day-num">4</span><div><h3>Wednesday, August 12</h3><div class="sub">Another Festival Day!</div></div></div>
+    </div>
+    <div class="day-body">
+      <div class="item"><span class="time">7:30 AM</span><span>Breakfast, Grand Cafe</span></div>
+      <div class="item"><span class="time">9:30 AM</span><span>Jura Suite — Francesca Moody</span></div>
+      <div class="item"><span class="time">11:00 AM</span><span>Afternoon free — choose your own adventure</span></div>
+      <div class="item"><span class="time">5:50 PM<span class="sum-queue">Line 5:30</span></span><span><b class="sum-show">Roleplay</b><span class="sum-venue">TechCube 0 at Summerhall</span></span></div>
+      <div class="item"><span class="time">7:30 PM<span class="sum-queue">Line 7:10</span></span><span><b class="sum-show">Lions</b><span class="sum-venue">TechCube 0 at Summerhall</span></span></div>
+      <div class="item"><span class="time">Post-show</span><span>Bus to hotel, dinner on your own</span></div>
+    </div>
+  </div>
+
+  <div class="day open">
+    <div class="day-head">
+      <div class="left"><span class="day-num">5</span><div><h3>Thursday, August 13</h3><div class="sub">Village Break &amp; Pleasance</div></div></div>
+    </div>
+    <div class="day-body">
+      <div class="item"><span class="time">7:00 AM</span><span>Breakfast, Grand Cafe</span></div>
+      <div class="item"><span class="time">10:05 AM</span><span>Add-on — Walking Tour of Dean Village</span></div>
+      <div class="item"><span class="time">10:00 AM</span><span>Find a new adventure — museums, walkabouts, or Dazzle Edinburgh</span></div>
+      <div class="item"><span class="time">3:00 PM</span><span>Afternoon Tea — The Colonnades</span></div>
+      <div class="item"><span class="time">5:30 PM<span class="sum-queue">Line 5:10</span></span><span><b class="sum-show">Ten Thousand Hours</b><span class="sum-venue">Main Hall at Assembly Hall</span></span></div>
+      <div class="item"><span class="time">7:30 PM<span class="sum-queue">Line 7:10</span></span><span><b class="sum-show">Ahir Shah's Golden</b><span class="sum-venue">Pleasance One at Pleasance Courtyard</span></span></div>
+      <div class="item"><span class="time">9:20 PM<span class="sum-queue">Line 9:00</span></span><span><b class="sum-show">Garry Starr: Classic Penguins</b><span class="sum-venue">Grand at Pleasance Courtyard</span></span></div>
+    </div>
+  </div>
+
+  <div class="day open">
+    <div class="day-head">
+      <div class="left"><span class="day-num">6</span><div><h3>Friday, August 14</h3><div class="sub">Making the Most of the Day</div></div></div>
+    </div>
+    <div class="day-body">
+      <div class="item"><span class="time">7:30 AM</span><span>Breakfast — bring what you need for the day</span></div>
+      <div class="item"><span class="time">9:30 AM</span><span>Jura Suite — Sivan Batat</span></div>
+      <div class="item"><span class="time">10:55 AM</span><span>Travel to the Traverse Theatre</span></div>
+      <div class="item"><span class="time">11:30 AM<span class="sum-queue">Line 11:10</span></span><span><b class="sum-show">After Party</b><span class="sum-venue">Traverse Theatre</span></span></div>
+      <div class="item"><span class="time">1:30 PM</span><span>Break for lunch</span></div>
+      <div class="item"><span class="time">3:30 PM<span class="sum-queue">Line 3:10</span></span><span><b class="sum-show">Bog Witch</b><span class="sum-venue">Traverse Theatre</span></span></div>
+      <div class="item"><span class="time">5:20 PM</span><span>Farewell Dinner — The Glasshouse</span></div>
+    </div>
+  </div>
+
+  <div class="day open">
+    <div class="day-head">
+      <div class="left"><span class="day-num">7</span><div><h3>Saturday, August 15</h3><div class="sub">Safe Travels Home</div></div></div>
+    </div>
+    <div class="day-body">
+      <div class="item"><span class="time">7:00 AM</span><span>Breakfast, Grand Cafe</span></div>
+      <div class="item"><span class="time">TBD</span><span>Transfers to Edinburgh Airport</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MUSEUMS ============ -->
+<section class="view" id="view-museums">
+  <div class="page-head">
+    <h1>Museums &amp; Galleries</h1>
+    <p>Edinburgh is wonderfully rich in museums — and most of the major ones are free.</p>
+  </div>
+
+  <div class="info-card">
+    <div class="section-label">For Art Lovers — The National Galleries of Scotland</div>
+
+    <div class="museum-entry">
+      <div class="museum-name">1. The Scottish National Gallery</div>
+      <div class="museum-meta">Open daily 10am–5pm · Free admission<br>The Mound, Edinburgh EH2 2EL · 9-minute walk from The Scotsman Hotel</div>
+      <div class="museum-desc">The main building, a neoclassical William Playfair design located on the Mound (between Princes Street and the Old Town), holds some of the city's most breathtaking art collections, with works by Vermeer, Titian, Rembrandt, Velázquez, and the Impressionists, plus the newly opened Scottish Galleries featuring William McTaggart, Charles Rennie Mackintosh, and the Glasgow Boys.</div>
+      <ul class="museum-highlights">
+        <li><b>The Bridgewater Madonna</b> (Raphael) — an exquisite, intimate depiction of the Virgin and Child, one of the finest High Renaissance paintings in the world.</li>
+        <li><b>The Virgin Adoring the Sleeping Christ Child</b> (Botticelli) — a beautiful, serene Renaissance piece.</li>
+        <li><b>An Old Woman Cooking Eggs</b> (Velázquez, 1618) — a stunning masterclass in realism, light, and texture.</li>
+        <li><b>Haystacks: Snow Effect</b> (Monet, 1891) and <b>Olive Trees</b> (Van Gogh, 1889), plus works by Degas, Gauguin, and Cézanne.</li>
+        <li><b>The Reverend Robert Walker Skating on Duddingston Loch</b> (Raeburn, c. 1795) — arguably Scotland's most famous and beloved painting.</li>
+        <li><b>The Monarch of the Glen</b> (Landseer, 1851) and <b>The Reconciliation of Oberon and Titania</b> (Paton, 1847).</li>
+      </ul>
+      <div class="museum-desc"><b>Special exhibitions:</b> Catherine Opie: <i>To Be Seen</i> (opening August 8, 2026) — the first major UK museum exhibition and first Scottish solo show for the acclaimed American photographer; the gallery extends its daily closing time to 6:00 PM in August to accommodate festival crowds. Also on display through early autumn: JMW Turner's <i>Norham Castle, Sunrise</i>, on special loan from the Tate.</div>
+      <div class="museum-desc"><a href="https://www.nationalgalleries.org/visit/scottish-national-gallery" target="_blank" rel="noopener">nationalgalleries.org/visit/scottish-national-gallery</a></div>
+    </div>
+
+    <div class="museum-entry">
+      <div class="museum-name">2. The Scottish National Portrait Gallery</div>
+      <div class="museum-meta">Open daily 10am–5pm · Free admission<br>1 Queen St, Edinburgh EH2 1JD · 11-minute walk from The Scotsman Hotel</div>
+      <div class="museum-desc">A red sandstone Gothic palace on Queen Street — the world's first purpose-built portrait gallery, as famous for its stunning architecture as for its art. The breathtaking entry hall features a massive gold-leaf mural telling Scotland's story through the faces of its key figures.</div>
+      <ul class="museum-highlights">
+        <li><b>The Great Hall</b> — the Processional Frieze mural and the building itself, modeled after the Doge's Palace in Venice with stained glass and a star-studded ceiling.</li>
+        <li><b>Modern Legends (First Floor):</b> Tilda Swinton, Sir Sean Connery, and Alan Cumming, among Scotland's trailblazing modern figures.</li>
+        <li><b>Royal Icons &amp; Historic Figures (Top Floor):</b> Mary Queen of Scots, Bonnie Prince Charlie, and Robert Burns.</li>
+      </ul>
+      <div class="museum-desc"><a href="https://www.nationalgalleries.org/visit/scottish-national-portrait-gallery" target="_blank" rel="noopener">nationalgalleries.org/visit/scottish-national-portrait-gallery</a></div>
+    </div>
+
+    <div class="museum-entry">
+      <div class="museum-name">3+4. Scottish National Gallery of Modern Art (Modern One &amp; Modern Two)</div>
+      <div class="museum-meta">Open daily 10am–5pm · Free admission<br>73/75 Belford Rd, Edinburgh EH4 3DR · 16-minute taxi or 40-minute walk</div>
+      <div class="museum-desc">One site, two sculpture parks, two galleries. Housed in a neoclassical 1825 building near Dean Village, showcasing world-class contemporary art from 1900 onward — Picasso, Nicodemus, Redpath, and more, across the past 120 years.</div>
+      <div class="museum-desc"><b>Modern One</b> holds one of the world's most comprehensive Surrealist collections — Dalí, Magritte, Ernst, and Giacometti. Peter Doig's <i>Morning, Paramin</i> is on display until January 2027, one of the artist's most celebrated late works, shown in Scotland for the first time.</div>
+      <div class="museum-desc"><b>Modern Two</b>, twinned with Modern One across Belford Road, holds a recreation of Eduardo Paolozzi's studio and Richard Wright's <i>The Stairwell Project</i>, the 2009 Turner Prize winner's site-specific installation.</div>
+      <div class="museum-desc"><a href="https://www.nationalgalleries.org/visit/scottish-national-gallery-modern-art" target="_blank" rel="noopener">nationalgalleries.org/visit/scottish-national-gallery-modern-art</a></div>
+    </div>
+
+    <div class="museum-entry">
+      <div class="museum-name">City Art Centre</div>
+      <div class="museum-meta">Daily 10am (last entry 4:30pm) · Generally free<br>2 Market St, Edinburgh EH1 1DE · 3-minute walk from The Scotsman Hotel</div>
+      <div class="museum-desc">Directly opposite Waverley Station, devoted to Scottish visual and applied arts — the ground floor houses a gift shop and the café, Mimi's Bakehouse. "Over recent years, Edinburgh's City Art Centre has proved to be the most important place for seeing Scottish art." — The Scotsman</div>
+    </div>
+  </div>
+
+  <div class="info-card">
+    <div class="section-label">Opportunities Other Than Art</div>
+    <div class="museum-entry">
+      <div class="museum-name">National Museum of Scotland</div>
+      <div class="museum-meta">10am–5pm daily · Free<br>Chambers St, Edinburgh EH1 1JF · 8-minute walk from The Scotsman Hotel</div>
+      <div class="museum-desc">The most diverse option, with collections ranging from ancient Egypt to Dolly the sheep. Formed from a merger of the Museum of Scotland and the Royal Scottish Museum — could easily fill half a day.</div>
+      <div class="museum-desc"><a href="https://www.nms.ac.uk/national-museum-of-scotland" target="_blank" rel="noopener">nms.ac.uk/national-museum-of-scotland</a></div>
+    </div>
+    <div class="museum-entry">
+      <div class="museum-name">The People's Story Museum</div>
+      <div class="museum-meta">Open Mon &amp; Thu–Sat 10–5 (closed Tue/Wed)<br>163 Canongate, Royal Mile, Edinburgh EH8 8BN · 8-minute walk</div>
+      <div class="museum-desc">Explores the lives of Edinburgh's working-class generations, including artefacts from social and political movements like Women's Suffrage.</div>
+    </div>
+    <div class="museum-entry">
+      <div class="museum-name">The Writers' Museum</div>
+      <div class="museum-meta">Open Wed–Sun 10–5 (closed Mon/Tue)<br>Lawnmarket, Lady Stair's Close, Edinburgh EH1 2PA · 8-minute walk</div>
+      <div class="museum-desc">Celebrates Robert Burns, Sir Walter Scott, and Robert Louis Stevenson through real artefacts — books, portraits, rare objects, and a printing press used for some of Scott's novels. A natural fit for our theatre-minded group.</div>
+    </div>
+  </div>
+
+  <div class="info-card">
+    <div class="section-label">The Wonderfully Unusual</div>
+    <div class="museum-entry">
+      <div class="museum-name">Surgeons' Hall Museum</div>
+      <div class="museum-meta">Open daily 10–5<br>Nicolson St, Edinburgh EH8 9DW · 8-minute walk from The Scotsman Hotel</div>
+      <div class="museum-desc">Owned by the Royal College of Surgeons of Edinburgh, home to the largest and most historic collection of pathological objects. Dating to 1832, it covers the evolution of surgical instruments, the first public dissection, and figures like Burke, Hare, Lister, and Simpson. Genuinely fascinating, and not for the faint-hearted.</div>
+    </div>
+    <div class="museum-entry">
+      <div class="museum-name">St Cecilia's Hall Concert Room and Music Museum</div>
+      <div class="museum-meta">Open Tue–Sat 10–5 (closed Sun/Mon) · Free admission<br>50 Niddry St, Edinburgh EH1 1LG · 4-minute walk from The Scotsman Hotel</div>
+      <div class="museum-desc">Part of the University of Edinburgh, an intimate Georgian concert hall housing one of the world's most important collections of musical instruments — harpsichords, clavichords, and early keyboards — with occasional concerts using the historic instruments.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DINING ============ -->
+<section class="view" id="view-dining">
+  <div class="page-head">
+    <h1>Restaurant Suggestions</h1>
+    <p>Base: The Scotsman Hotel, North Bridge.</p>
+  </div>
+
+  <div class="resto-context">
+    <b>Wednesday, August 12:</b> Roleplay (5:50–7:00) at Summerhall, followed by Lions at 7:30, scheduled to end at 8:30. A bus returns us to The Scotsman, arriving around 8:45–8:50 PM. If you'd like a late dinner, the restaurants below are within easy walking distance of the hotel and will still be open and serving — a 9 PM reservation would work.
+  </div>
+
+  <div class="info-card">
+    <div class="section-label">On or Right off the Royal Mile / High Street</div>
+    <div class="resto-row">
+      <div class="resto-top"><span class="resto-name">The Piper's Rest</span><span class="resto-rating">★★★★½</span></div>
+      <div class="resto-meta">3 Hunter Square · 3-minute walk · Open 10AM–1AM</div>
+      <div class="resto-notes">Scottish gastropub, nightly live music, handles groups well. <a href="tel:+441312855240">+44 131 285 5240</a></div>
+    </div>
+    <div class="resto-row">
+      <div class="resto-top"><span class="resto-name">Whiski Bar &amp; Restaurant</span><span class="resto-rating">★★★★</span></div>
+      <div class="resto-meta">119 High St · 2-minute walk · Open 10AM–1AM</div>
+      <div class="resto-notes">300+ whiskies, solid food, can be slow when busy. <a href="tel:+441315563095">+44 131 556 3095</a></div>
+    </div>
+    <div class="resto-row">
+      <div class="resto-top"><span class="resto-name">The World's End</span><span class="resto-rating">★★★★</span></div>
+      <div class="resto-meta">2-8 High St · 4-minute walk · Open 11AM–12AM</div>
+      <div class="resto-notes">Historic 16th-century pub, hearty pub fare. <a href="tel:+441315563628">+44 131 556 3628</a></div>
+    </div>
+    <div class="resto-row">
+      <div class="resto-top"><span class="resto-name">The Royal Mile Tavern</span><span class="resto-rating">★★★★</span></div>
+      <div class="resto-meta">127 High St · 3-minute walk · Open 12PM–11PM</div>
+      <div class="resto-notes">Traditional pub, whisky, live music. <a href="tel:+441315579681">+44 131 557 9681</a></div>
+    </div>
+    <div class="resto-row">
+      <div class="resto-top"><span class="resto-name">The Devil's Advocate</span><span class="resto-rating">★★★★½</span></div>
+      <div class="resto-meta">9 Advocate's Close · 5-minute walk · Open 12PM–12AM</div>
+      <div class="resto-notes">Atmospheric gastropub in an old pump house down a steep close (stairs!). <a href="tel:+441312974624">+44 131 297 4624</a></div>
+    </div>
+    <div class="resto-row">
+      <div class="resto-top"><span class="resto-name">Luckenbooths</span><span class="resto-rating">★★★★½</span></div>
+      <div class="resto-meta">329 High St · 5-minute walk · Open 7AM–11PM</div>
+      <div class="resto-notes">Newer all-day dining, family-friendly, Cullen Skink praised. <a href="tel:+441312300410">+44 131 230 0410</a></div>
+    </div>
+    <div class="resto-row">
+      <div class="resto-top"><span class="resto-name">Vinyasa</span><span class="resto-rating">★★★★</span></div>
+      <div class="resto-meta">34 St Mary's St · 6-minute walk · Open 3PM–11PM</div>
+      <div class="resto-notes">Well-liked Indian, good change of pace. <a href="tel:+441315566776">+44 131 556 6776</a></div>
+    </div>
+    <div class="resto-row">
+      <div class="resto-top"><span class="resto-name">The Grand Café</span><span class="resto-rating">★★★★½</span></div>
+      <div class="resto-meta">20 North Bridge · 1-minute walk · Open 9AM–11PM</div>
+      <div class="resto-notes">Inside The Scotsman — gorgeous room, live piano, convenient! <a href="tel:+441316222999">+44 131 622 2999</a></div>
+    </div>
+  </div>
+
+  <div class="info-card">
+    <div class="section-label">On Canongate (Continuation of the Mile, Toward Holyrood)</div>
+    <div class="resto-row">
+      <div class="resto-top"><span class="resto-name">White Horse Oyster &amp; Seafood Bar</span><span class="resto-rating">★★★★</span></div>
+      <div class="resto-meta">266 Canongate · 5-minute walk · Open 12PM–11PM</div>
+      <div class="resto-notes">Oldest inn on the Mile; fresh seafood, occasional off night. <a href="tel:+441316295300">+44 131 629 5300</a></div>
+    </div>
+    <div class="resto-row">
+      <div class="resto-top"><span class="resto-name">Wedgwood The Restaurant</span><span class="resto-rating">★★★★½</span></div>
+      <div class="resto-meta">267 Canongate · 5-minute walk · Open 5PM–11PM</div>
+      <div class="resto-notes">Foraged-ingredient fine dining, ex-Michelin listed. <a href="tel:+441315588737">+44 131 558 8737</a></div>
+    </div>
+    <div class="resto-row">
+      <div class="resto-top"><span class="resto-name">PIGGS (Wine &amp; Tapas)</span><span class="resto-rating">★★★★½</span></div>
+      <div class="resto-meta">276 Canongate · 5-minute walk · Open 12PM–11PM</div>
+      <div class="resto-notes">Spanish tapas gem, tiny room, worth it — absolutely reserve. <a href="tel:+441315572955">+44 131 557 2955</a></div>
+    </div>
+    <div class="resto-row">
+      <div class="resto-top"><span class="resto-name">Cask and Vine</span><span class="resto-rating">★★★★½</span></div>
+      <div class="resto-meta">244 Canongate · 5-minute walk · Open 3PM–11PM</div>
+      <div class="resto-notes">Intimate wine/whisky bistro, newer &amp; small. <a href="tel:+441315632468">+44 131 563 2468</a></div>
+    </div>
+    <div class="museum-desc" style="margin-top:6px;"><i>Ratings blend TripAdvisor/Google aggregates with recent food-critic writeups (Scotsman Food &amp; Drink, Hardens, Scottish Field) as of July 2026.</i></div>
+  </div>
+
+  <div class="resto-context">
+    <b>Friday, August 14 — Between-Show Lunch, Traverse Theatre:</b> After Party is scheduled to end at 1:20, and Bog Witch begins at 3:30 (in-line by 3:15). You have about 80 minutes between performances, so be sure to make a lunch reservation. Every recommendation below is within a 5-minute walk of the theatre.
+  </div>
+
+  <div class="info-card">
+    <div class="section-label">At the Theatre — 1–2 Minutes</div>
+    <div class="resto-row">
+      <div class="resto-top"><span class="resto-name">Dine Edinburgh</span><span class="resto-rating">★★★★½</span></div>
+      <div class="resto-meta">10 Cambridge St</div>
+      <div class="resto-notes">Above the Traverse — you can't beat the convenience. <a href="tel:+441312181818">+44 131 218 1818</a></div>
+    </div>
+    <div class="resto-row">
+      <div class="resto-top"><span class="resto-name">Bucks Bar</span><span class="resto-rating">★★★★½</span></div>
+      <div class="resto-meta">32-34 Grindlay St</div>
+      <div class="resto-notes">Fast, fun, great chicken sandwiches — ideal for a snug 60-minute window. <a href="tel:+441312028181">+44 131 202 8181</a></div>
+    </div>
+    <div class="resto-row">
+      <div class="resto-top"><span class="resto-name">Spirit of Thai</span><span class="resto-rating">★★★★½</span></div>
+      <div class="resto-meta">44 Grindlay St</div>
+      <div class="resto-notes">Good-value lunch deal, large portions. <a href="tel:+441312289333">+44 131 228 9333</a></div>
+    </div>
+  </div>
+
+  <div class="info-card">
+    <div class="section-label">2–3 Minutes (Lothian Road Cluster)</div>
+    <div class="resto-row">
+      <div class="resto-top"><span class="resto-name">Red Squirrel</span><span class="resto-rating">★★★★</span></div>
+      <div class="resto-meta">21 Lothian Rd</div>
+      <div class="resto-notes">Relaxed gastropub, generous portions. <a href="tel:+441312299933">+44 131 229 9933</a></div>
+    </div>
+    <div class="resto-row">
+      <div class="resto-top"><span class="resto-name">Bread Meats Bread</span><span class="resto-rating">★★★★½</span></div>
+      <div class="resto-meta">90-92 Lothian Rd</div>
+      <div class="resto-notes">Well-loved burgers; some say world famous. <a href="tel:+441312253000">+44 131 225 3000</a></div>
+    </div>
+    <div class="resto-row">
+      <div class="resto-top"><span class="resto-name">Topolabamba</span><span class="resto-rating">★★★★</span></div>
+      <div class="resto-meta">93 Lothian Rd</div>
+      <div class="resto-notes">Tex-Mex, excellent lunch deal (3 dishes + rice/chips, under £15). <a href="tel:+441312286863">+44 131 228 6863</a></div>
+    </div>
+    <div class="resto-row">
+      <div class="resto-top"><span class="resto-name">Wagamama</span><span class="resto-rating">★★★★</span></div>
+      <div class="resto-meta">1 Castle Terrace</div>
+      <div class="resto-notes">Fast, familiar, no-surprises option. <a href="tel:+441312295506">+44 131 229 5506</a></div>
+    </div>
+  </div>
+
+  <div class="info-card">
+    <div class="section-label">4–5 Minutes Away</div>
+    <div class="resto-row">
+      <div class="resto-top"><span class="resto-name">PULSE Plant-Based</span><span class="resto-rating">★★★★★</span></div>
+      <div class="resto-meta">1 Lothian Rd</div>
+      <div class="resto-notes">Excellent vegetarian/vegan, calm atmosphere. <a href="tel:+447930801074">+44 7930 801074</a></div>
+    </div>
+    <div class="resto-row">
+      <div class="resto-top"><span class="resto-name">All Bar One Exchange Plaza</span><span class="resto-rating">★★★★½</span></div>
+      <div class="resto-meta">50 Lothian Rd</div>
+      <div class="resto-notes">In the Clydesdale Bank Plaza — bar-with-food, good small plates. <a href="tel:+441312217951">+44 131 221 7951</a></div>
+    </div>
+    <div class="museum-desc" style="margin-top:6px;"><i>Ratings reflect Google/TripAdvisor aggregates as of July 2026.</i></div>
+  </div>
+</section>
+
+<nav class="tabbar">
+  <button data-tab="home" class="active">
+    <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11.5 12 4l8 7.5"/><path d="M6 10v9a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1v-9"/></svg>
+    Home
+  </button>
+  <button data-tab="plan">
+    <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="16" rx="2.5"/><path d="M3 9.5h18M8 3v3M16 3v3"/></svg>
+    Plan
+  </button>
+  <button data-tab="summary">
+    <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h2M4 12h2M4 18h2M10 6h10M10 12h10M10 18h10"/></svg>
+    Summary
+  </button>
+  <button data-tab="museums">
+    <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21h16M5 21V10M19 21V10M3 10l9-6 9 6M8 21v-6h8v6"/></svg>
+    Museums
+  </button>
+  <button data-tab="dining">
+    <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3v7a2 2 0 0 0 2 2v9M7 3v9M10 3v9M17 3c-1.5 0-3 1.5-3 4.5S15.5 12 17 12v9M17 3v18"/></svg>
+    Dining
+  </button>
+  <button data-tab="info">
+    <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.01"/></svg>
+    Info
+  </button>
+</nav>
+
+<script>
+(function(){
+  "use strict";
+
+  var tabs = ["home","plan","summary","museums","dining","info"];
+  function showTab(name){
+    tabs.forEach(function(t){
+      document.getElementById("view-"+t).classList.toggle("active", t === name);
+    });
+    document.querySelectorAll("nav.tabbar button").forEach(function(b){
+      b.classList.toggle("active", b.dataset.tab === name);
+    });
+    window.scrollTo(0,0);
+    try{ localStorage.setItem("std_edin_tab_v1", name); }catch(e){}
+  }
+  document.querySelectorAll("nav.tabbar button").forEach(function(b){
+    b.addEventListener("click", function(){ showTab(b.dataset.tab); });
+  });
+  document.querySelectorAll("[data-goto]").forEach(function(b){
+    b.addEventListener("click", function(){ showTab(b.dataset.goto); });
+  });
+
+  function todayStr(){
+    var d = new Date();
+    return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");
+  }
+  var TRIP = {
+    "2026-08-09": {title:"Travel Day", desc:"Group activities kick off tomorrow.", day:"day-1"},
+    "2026-08-10": {title:"Welcome to Edinburgh", desc:"Arrivals, check-in at The Scotsman at 3, and the Welcome Dinner at The Bonham begins at 5:30. Optional Royal Military Tattoo at 9:30.", day:"day-2"},
+    "2026-08-11": {title:"Full Festival Day!", desc:"Jura Suite with Mark Fisher, Multiple Show Options and Dinner at Divino Enoteca.", day:"day-3"},
+    "2026-08-12": {title:"Another Festival Day!", desc:"Jura Suite with Francesca Moody, Choose your own Adventure Afternoon, Summerhall in the evening.", day:"day-4"},
+    "2026-08-13": {title:"Village Break & Pleasance", desc:"Dean Village walk, Afternoon Tea at The Colonnades, option of Ten Thousand Hours followed by Ahir Shah, and Garry Starr.", day:"day-5"},
+    "2026-08-14": {title:"Making the Most of the Day", desc:"Jura Suite with Sivan Batat, Traverse Theatre Day followed by the Farewell Dinner at The Glasshouse.", day:"day-6"},
+    "2026-08-15": {title:"Safe Travels Home", desc:"Breakfast, then transfers to Edinburgh Airport. Thank you for a wonderful week at the Fringe.", day:"day-7"}
+  };
+  (function initToday(){
+    var t = todayStr();
+    var info = TRIP[t];
+    if (info){
+      document.getElementById("today-eyebrow").textContent = "Today · " + new Date(t+"T12:00:00").toLocaleDateString(undefined,{weekday:"long", month:"long", day:"numeric"});
+      document.getElementById("today-title").textContent = info.title;
+      document.getElementById("today-desc").textContent = info.desc;
+      var d = document.getElementById(info.day);
+      if (d){
+        d.classList.add("open","is-today");
+        var head = d.querySelector(".day-head");
+        if (head && !head.querySelector(".today-pill")){
+          head.insertAdjacentHTML("beforeend", '<span class="today-pill">Today</span>');
+        }
+      }
+    } else {
+      var before = t < "2026-08-09";
+      document.getElementById("today-eyebrow").textContent = before ? "Countdown" : "Edinburgh Fringe";
+      document.getElementById("today-title").textContent = before ? "See you in Edinburgh soon" : "Thanks for a wonderful week";
+      document.getElementById("today-desc").textContent = before
+        ? "The trip runs August 9–15, 2026. Everything you need — the plan and trip info — is right here."
+        : "The trip has wrapped. Your itinerary and trip info are still saved below.";
+    }
+  })();
+
+  window.toggleDay = function(id){
+    document.getElementById(id).classList.toggle("open");
+  };
+
+  var installTip = document.getElementById("install-tip");
+  var installClose = document.getElementById("install-tip-close");
+  try{
+    if (localStorage.getItem("std_edin_install_dismissed_v1")) installTip.style.display = "none";
+  }catch(e){}
+  installClose.addEventListener("click", function(){
+    installTip.style.display = "none";
+    try{ localStorage.setItem("std_edin_install_dismissed_v1","1"); }catch(e){}
+  });
+
+  try{
+    var savedTab = localStorage.getItem("std_edin_tab_v1");
+    if (savedTab && tabs.indexOf(savedTab) !== -1) showTab(savedTab);
+  }catch(e){}
+
+  if ("serviceWorker" in navigator){
+    window.addEventListener("load", function(){
+      navigator.serviceWorker.register("sw.js").catch(function(){});
+    });
+  }
+})();
+</script>
+
+</body>
+</html>
