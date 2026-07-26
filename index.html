@@ -510,6 +510,12 @@
     display:block; text-align:center; margin-top:6px; font-size:calc(11.5px * var(--tscale)); color:var(--text-muted);
   }
 
+  .app-footer{
+    max-width:640px; margin:26px auto 0; padding:16px 16px 4px;
+    text-align:center; font-size:calc(10.5px * var(--tscale)); color:var(--text-muted);
+    border-top:1px solid var(--border);
+  }
+
   /* ---------- bottom nav ---------- */
   nav.tabbar{
     position:fixed; left:0; right:0; bottom:0; z-index:30;
@@ -911,6 +917,10 @@
   <div class="page-head">
     <h1>Trip Info</h1>
     <p>Hotel, contacts, venues, and things worth knowing.</p>
+  </div>
+
+  <div class="info-card" style="text-align:center;">
+    <p style="margin:0; font-size:calc(13px * var(--tscale)); color:var(--text-muted);">Studio Trip led by <a href="https://curtainupexperiences.com/about-us.html" target="_blank" rel="noopener"><b>Curtain Up Experiences</b></a></p>
   </div>
 
   <div class="info-card">
@@ -1337,6 +1347,8 @@
     <button class="bingo-switch" id="bingo-switch">Not you? Switch card</button>
   </div>
 </section>
+
+<footer class="app-footer">&copy; 2026 Curtain Up Experiences, Inc. All Rights Reserved.</footer>
 
 <nav class="tabbar">
   <button data-tab="home" class="active">
