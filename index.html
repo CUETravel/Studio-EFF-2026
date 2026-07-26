@@ -193,7 +193,7 @@
     background:var(--highlight-bg);
     border:1px dashed var(--red);
     border-radius:10px;
-    padding:13px 14px;
+    padding:13px 32px 13px 14px;
     font-size:calc(12.5px * var(--tscale));
     line-height:1.55;
     color:var(--text-muted);
@@ -1311,9 +1311,8 @@
 <section class="view" id="view-bingo">
   <div class="page-head">
     <h1>The "I'm Doing the Fringe Right" Bingo Card</h1>
-    <p>Congratulations! You are currently packed like a sardine into historic Old Town. Instead of complaining about your steps or your calves, let's gamify the chaos. This card tracks the best, most ridiculous, and completely accidental moments of your day. Mark your spots, dodge the street performers, and remember: if you haven't climbed a 45-degree hill today, you're on the wrong street.</p>
+    <p id="bingo-intro-congrats">Congratulations! You are currently packed like a sardine into historic Old Town. Instead of complaining about your steps or your calves, let's gamify the chaos. This card tracks the best, most ridiculous, and completely accidental moments of your day. Mark your spots, dodge the street performers, and remember: if you haven't climbed a 45-degree hill today, you're on the wrong street.</p>
     <p style="margin-top:8px; font-weight:800; color:var(--red);">Mark it off as it happens — five in a row wins!</p>
-    <p style="margin-top:4px; font-style:italic; color:var(--text-muted); font-size:calc(12px * var(--tscale));">Your squares will stay selected if you load your card from the same device.</p>
   </div>
 
   <div id="bingo-picker">
@@ -1330,6 +1329,10 @@
     </div>
     <div class="bingo-grid" id="bingo-grid"></div>
     <div class="bingo-progress" id="bingo-progress"></div>
+    <div class="install-tip" id="bingo-install-tip">
+      <button class="close-tip" id="bingo-install-tip-close" aria-label="Dismiss">×</button>
+      Your squares will stay selected if you save this app on your home screen: in Safari, tap the Share icon, then "Add to Home Screen."
+    </div>
     <button class="bingo-switch" id="bingo-switch">Not you? Switch card</button>
   </div>
 </section>
@@ -1576,6 +1579,7 @@
     loadBingoState(name);
     document.getElementById("bingo-picker").style.display = "none";
     document.getElementById("bingo-card-wrap").style.display = "block";
+    document.getElementById("bingo-intro-congrats").style.display = "none";
     renderBingoGrid();
   }
 
@@ -1602,11 +1606,21 @@
   document.getElementById("bingo-switch").addEventListener("click", function(){
     document.getElementById("bingo-card-wrap").style.display = "none";
     document.getElementById("bingo-picker").style.display = "block";
+    document.getElementById("bingo-intro-congrats").style.display = "";
     document.getElementById("bingo-search").value = "";
     renderBingoNameList("");
   });
   document.getElementById("bingo-win-close").addEventListener("click", function(){
     document.getElementById("bingo-win-overlay").classList.remove("open");
+  });
+
+  var bingoInstallTip = document.getElementById("bingo-install-tip");
+  try{
+    if (localStorage.getItem("std_edin_bingo_install_dismissed_v1")) bingoInstallTip.style.display = "none";
+  }catch(e){}
+  document.getElementById("bingo-install-tip-close").addEventListener("click", function(){
+    bingoInstallTip.style.display = "none";
+    try{ localStorage.setItem("std_edin_bingo_install_dismissed_v1","1"); }catch(e){}
   });
 
   renderBingoNameList("");
