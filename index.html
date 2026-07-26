@@ -319,6 +319,22 @@
     padding:6px 0 6px 4px; border-left:2px solid var(--border); margin:4px 0 4px 2px; padding-left:10px;
   }
 
+  .suggest-block{margin-top:16px; padding-top:12px; border-top:1px dashed var(--border);}
+  .suggest-label{
+    font-size:calc(11px * var(--tscale)); text-transform:uppercase; letter-spacing:1px;
+    color:var(--red); font-weight:800; margin-bottom:6px;
+  }
+  .suggest-item{padding:9px 0; border-top:1px solid var(--border);}
+  .suggest-item:first-of-type{border-top:none;}
+  .suggest-time{font-weight:900; color:var(--text); font-size:calc(12px * var(--tscale));}
+  .suggest-title{font-weight:800; font-style:italic; color:var(--blue); font-size:calc(14px * var(--tscale)); margin:1px 0;}
+  .suggest-venue{font-size:calc(11.5px * var(--tscale)); color:var(--text-muted); font-style:italic;}
+  .suggest-desc{font-size:calc(12.5px * var(--tscale)); color:var(--text-muted); margin-top:3px; line-height:1.5;}
+  .suggest-cancelled{
+    font-size:calc(12px * var(--tscale)); color:var(--red-deep); font-weight:700;
+    margin-top:8px; font-style:italic;
+  }
+
   .callout{
     margin:10px 0; border-radius:8px; padding:11px 13px;
     font-size:calc(12px * var(--tscale)); line-height:1.55;
@@ -544,7 +560,18 @@
 <body>
 
 <header class="topbar">
-  <div class="mark"><span>ST</span></div>
+  <div class="mark">
+    <svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="#fff8ec" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M8 4.8c-2.8 0-4.6 2-4.6 5v2.6c0 3 1.8 5 4.6 5s4.6-2 4.6-5V9.8c0-3-1.8-5-4.6-5Z"/>
+      <circle cx="6.3" cy="9.6" r="0.55" fill="#fff8ec" stroke="none"/>
+      <circle cx="9.7" cy="9.6" r="0.55" fill="#fff8ec" stroke="none"/>
+      <path d="M6.3 13.4c.6.7 1.7.7 2.3 0"/>
+      <path d="M16.2 6.6c-2.8 0-4.6 2-4.6 5v2.6c0 3 1.8 5 4.6 5s4.6-2 4.6-5v-2.6c0-3-1.8-5-4.6-5Z"/>
+      <circle cx="14.5" cy="11.4" r="0.55" fill="#fff8ec" stroke="none"/>
+      <circle cx="17.9" cy="11.4" r="0.55" fill="#fff8ec" stroke="none"/>
+      <path d="M14.7 16.4c.5-.7 1.6-.7 2.1 0"/>
+    </svg>
+  </div>
   <div class="title">Edinburgh Fringe<small>Studio Theatre Donor Trip</small></div>
   <button class="text-toggle" id="text-toggle" aria-label="Adjust text size" title="Adjust text size">
     <span class="text-toggle-glyph">Aa</span>
@@ -632,7 +659,7 @@
     <div class="day-body">
       <div class="day-quote">"Edinburgh in August is the only place to be. It's a hotbed of genius, a marketplace of ideas, and an absolute circus."<span>— Billy Connolly, Actor</span></div>
       <div class="item"><span>Various arrivals at Edinburgh Airport — transfer to Old Town and The Scotsman Hotel</span></div>
-      <div class="item"><span><b>Options while waiting for check-in</b> — stretch your legs and learn the neighborhood. <b>1st Option:</b> Self-guided walkabout exploring the Royal Mile, learning more about Old Town. Gain a deeper historical perspective and appreciation of Edinburgh (witches and all!). <b>2nd Option:</b> Self-guided walkabout of the Fringe, learning a bit of history about the festival, checking out some of the venues, and gaining a better understanding of how the Fringe works. Guide booklets provided.</span></div>
+      <div class="item"><span><b>Options while waiting for check-in</b> — stretch your legs and learn the neighborhood. <b>1st Option:</b> Self-guided walkabout exploring the Royal Mile, learning more about Old Town. Gain a deeper historical perspective and appreciation of Edinburgh (witches and all!). <b>2nd Option:</b> Self-guided walkabout of the Fringe, learning a bit of history about the festival, checking out some of the venues, and gaining a better understanding of how the Fringe works. Guide booklets provided. <b>3rd Option — David's Suggestion for an Additional Show:</b> <i>Bliss</i> (1:00–2:20 PM), Grand at Pleasance Courtyard. Likely the biggest and best-resourced new musical of this year's Fringe, with 17 performers — obviously hoping to be the next SIX.</span></div>
       <div class="item highlight"><span class="time">3:00 PM</span><span><b>Check-in — The Scotsman Hotel.</b> Have a bit of a rest before dinner.</span></div>
       <div class="item"><span class="time">5:10 PM</span><span>Gather for travel to our welcome dinner at <b>The Bonham Hotel</b>, 35 Drumsheugh Gardens. The Bonham comprises three Victorian townhouses built in 1872 near Edinburgh's New Town and Dean Village. Over the years, these buildings served as a private maternity clinic, earning the nickname "Bonham Babies," then as student housing for the University of Edinburgh. In 1998, The Town House Company restored them and opened The Bonham Hotel. Richard H. Driehaus acquired the hotel in 2017, enriching it with his notable art collection.</span></div>
       <div class="show-card venue-event">
@@ -647,7 +674,8 @@
           <div class="show-desc">The Dean Suite is the hotel's largest private event space, featuring spectacular high ceilings, stunning Victorian architecture, a grand fireplace, and a beautiful bay window overlooking the private Drumsheugh Gardens.</div>
         </div>
       </div>
-      <div class="item"><span class="time">8:40 PM</span><span>Post-dinner, all guests return to The Scotsman by private bus (10-minute walk). Guests attending the Royal Tattoo will walk up to the Castle Esplanade for the performance.</span></div>
+      <div class="item"><span class="time">8:40 PM</span><span>Post-dinner, all guests return to The Scotsman by private bus.</span></div>
+      <div class="item"><span class="time">9:00 PM</span><span>Guests attending the Royal Tattoo walk up to the Castle Esplanade for the Tattoo. Held outdoors, it gets windy with a stark temperature drop after sunset — it's colder than the forecast suggests. Consider a heavy sweater/fleece, warm socks, and a windproof jacket. 10-minute walk.</span></div>
       <div class="show-card">
         <img src="images/venue-tattoo.jpg" alt="Edinburgh Royal Military Tattoo">
         <div>
@@ -771,6 +799,21 @@
         </div>
       </div>
       <div class="item"><span><b>Post-show:</b> a private bus will return the group to the hotel (10-minute ride) for late dinner on your own in the area. We suggest that you make a reservation in advance. Please let us know if you will not be taking the bus back to The Scotsman.</span></div>
+      <div class="suggest-block">
+        <div class="suggest-label">David's Show Suggestions</div>
+        <div class="suggest-item">
+          <div class="suggest-time">9:30–10:30 PM</div>
+          <div class="suggest-title">Baby Wants Candy</div>
+          <div class="suggest-venue">Studio One at Assembly George Square Studios</div>
+          <div class="suggest-desc">Improvised musical.</div>
+        </div>
+        <div class="suggest-item">
+          <div class="suggest-time">9:30–10:30 PM</div>
+          <div class="suggest-title">David Elms Describes a Room</div>
+          <div class="suggest-venue">Upstairs at Pleasance Courtyard</div>
+        </div>
+        <div class="suggest-cancelled">Note: HOLE! has been cancelled for today.</div>
+      </div>
     </div>
   </div>
 
@@ -796,6 +839,15 @@
         </div>
       </div>
       <div class="item"><span class="time">10:00–2:45</span><span><b>Find a new adventure.</b> Explore one of the many museums or galleries that Edinburgh has to offer. <b>Or</b> try one of the Self-Guided Walkabouts and get to know the city better. <b>Or</b> experience <b>Dazzle Edinburgh 2026</b>, returning to Dovecot Studios on Infirmary Street for its 44th year, running August 7–30, open daily 10am–5:30pm with free entry and no booking required. It will feature 55 contemporary jewelers showing over 2,000 pieces, all available for sale. This is a beloved and long-running fixture of the August festival season. Founded in 1981 and first shown in Edinburgh in 1983, Dazzle has become a much-anticipated highlight of the festival calendar, celebrated for championing independent design and pushing the boundaries of wearable art. <b>Or</b> head into the Fringe for a deeper look! You can focus your exploration on specific shows suggested by David Muse or recommended reviews, or you can focus your exploration on specific venues/areas and see multiple shows without having to travel far between shows.</span></div>
+      <div class="suggest-block">
+        <div class="suggest-label">David's Show Suggestion</div>
+        <div class="suggest-item">
+          <div class="suggest-time">1:00–2:20 PM</div>
+          <div class="suggest-title">Bliss</div>
+          <div class="suggest-venue">Grand at Pleasance Courtyard</div>
+          <div class="suggest-desc">Likely the biggest and best-resourced new musical of this year's Fringe, with 17 performers — obviously hoping to be the next SIX.</div>
+        </div>
+      </div>
       <div class="item highlight"><span class="time">2:45 PM</span><span>We'll gather at The Scotsman to walk to The Colonnades at the Signet Library in Parliament Square. If you're going directly to The Colonnades from your activities, please be there no later than 2:55 PM — please let us know if you're going there directly.</span></div>
       <div class="show-card venue-event">
         <img src="images/venue-colonnades.jpg" alt="The Colonnades at the Signet Library">
@@ -848,7 +900,7 @@
     <div class="day-head" onclick="toggleDay('day-6')">
       <div class="left">
         <span class="day-num">6</span>
-        <div><h3>Friday, August 14</h3><div class="sub">Making the Most of the Day</div></div>
+        <div><h3>Friday, August 14</h3><div class="sub">Traverse Theatre Day</div></div>
       </div>
       <svg class="chev" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
     </div>
@@ -890,6 +942,25 @@
         </div>
       </div>
       <div class="walk-note">After dinner: an easy 13-minute stroll back to The Scotsman Hotel</div>
+      <div class="suggest-block">
+        <div class="suggest-label">David's Show Suggestions</div>
+        <div class="suggest-item">
+          <div class="suggest-time">9:30–10:30 PM</div>
+          <div class="suggest-title">Baby Wants Candy</div>
+          <div class="suggest-venue">Studio One at Assembly George Square Studios</div>
+          <div class="suggest-desc">Improvised musical.</div>
+        </div>
+        <div class="suggest-item">
+          <div class="suggest-time">9:30–10:30 PM</div>
+          <div class="suggest-title">David Elms Describes a Room</div>
+          <div class="suggest-venue">Upstairs at Pleasance Courtyard</div>
+        </div>
+        <div class="suggest-item">
+          <div class="suggest-time">9:30–10:50 PM</div>
+          <div class="suggest-title">HOLE!</div>
+          <div class="suggest-venue">Cowbarn at Underbelly, Bristo Square</div>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -917,10 +988,6 @@
   <div class="page-head">
     <h1>Trip Info</h1>
     <p>Hotel, contacts, venues, and things worth knowing.</p>
-  </div>
-
-  <div class="info-card" style="text-align:center;">
-    <p style="margin:0; font-size:calc(13px * var(--tscale)); color:var(--text-muted);">Studio Trip led by <a href="https://curtainupexperiences.com/about-us.html" target="_blank" rel="noopener"><b>Curtain Up Experiences</b></a></p>
   </div>
 
   <div class="info-card">
@@ -976,6 +1043,10 @@
     <p style="margin-bottom:8px;"><b>Zero-tolerance lock-out:</b> even 30 seconds late and the doors are barred, your ticket is canceled, and there's no refund. Be in line 20–30 minutes before showtime.</p>
     <p>Venues require the full audience to exit between performances so the crew can reset — don't expect to hold a seat between back-to-back shows.</p>
   </div>
+
+  <div class="info-card" style="text-align:center;">
+    <p style="margin:0; font-size:calc(13px * var(--tscale)); color:var(--text-muted);">Studio Trip led by <a href="https://curtainupexperiences.com/about-us.html" target="_blank" rel="noopener"><b>Curtain Up Experiences</b></a></p>
+  </div>
 </section>
 
 <!-- ============ SUMMARY ============ -->
@@ -1003,7 +1074,8 @@
       <div class="item"><span class="time">5:10 PM</span><span>Depart for welcome dinner at The Bonham Hotel</span></div>
       <div class="item"><span class="time">5:30 PM</span><span>Drinks in the Library, Bonham Hotel</span></div>
       <div class="item"><span class="time">6:30 PM</span><span>Dinner in the Dean Suite, Bonham Hotel</span></div>
-      <div class="item"><span class="time">8:40 PM</span><span>Return to The Scotsman</span></div>
+      <div class="item"><span class="time">8:40 PM</span><span>All guests return to The Scotsman by private bus</span></div>
+      <div class="item"><span class="time">9:00 PM</span><span>Guests attending the Royal Tattoo walk up to the Castle Esplanade for the Tattoo</span></div>
       <div class="item highlight showrow"><span class="time"><span class="sum-queue">Line 9:15</span>9:30 PM</span><span>Optional — <b class="sum-show">Edinburgh Royal Military Tattoo</b><span class="sum-venue">Castle Esplanade</span></span></div>
     </div>
   </div>
@@ -1055,7 +1127,7 @@
 
   <div class="day open">
     <div class="day-head">
-      <div class="left"><span class="day-num">6</span><div><h3>Friday, August 14</h3><div class="sub">Making the Most of the Day</div></div></div>
+      <div class="left"><span class="day-num">6</span><div><h3>Friday, August 14</h3><div class="sub">Traverse Theatre Day</div></div></div>
     </div>
     <div class="day-body">
       <div class="item"><span class="time">7:30 AM</span><span>Breakfast — bring what you need for the day</span></div>
@@ -1348,7 +1420,7 @@
   </div>
 </section>
 
-<footer class="app-footer">&copy; 2026 Curtain Up Experiences, Inc. All Rights Reserved.</footer>
+<footer class="app-footer">&copy; 2026 Curtain Up Experiences, LLC. All Rights Reserved.</footer>
 
 <nav class="tabbar">
   <button data-tab="home" class="active">
