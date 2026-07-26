@@ -406,6 +406,83 @@
   .resto-notes{font-size:calc(12.5px * var(--tscale)); color:var(--text-muted); line-height:1.5; margin-top:4px;}
   .resto-notes a{font-weight:700;}
 
+  /* ---------- bingo ---------- */
+  .bingo-picker-note{
+    font-size:calc(12.5px * var(--tscale)); color:var(--text-muted); line-height:1.5;
+    margin-bottom:12px;
+  }
+  .bingo-search{
+    width:100%; box-sizing:border-box; font-size:calc(14px * var(--tscale));
+    padding:11px 13px; border-radius:10px; border:1px solid var(--border);
+    background:var(--surface); color:var(--text); margin-bottom:12px;
+  }
+  .bingo-name-list{
+    background:var(--surface); border:1px solid var(--border); border-radius:10px;
+    overflow:hidden; box-shadow:0 2px 8px var(--shadow);
+  }
+  .bingo-name-row{
+    display:block; width:100%; text-align:left; background:none; border:none;
+    border-top:1px solid var(--border); padding:12px 14px; font-size:calc(14px * var(--tscale));
+    font-weight:700; color:var(--text); cursor:pointer;
+  }
+  .bingo-name-row:first-child{border-top:none;}
+  .bingo-name-empty{padding:16px; text-align:center; color:var(--text-muted); font-size:calc(13px * var(--tscale));}
+
+  .bingo-header{
+    background:linear-gradient(135deg, var(--red) 0%, var(--red-deep) 100%);
+    color:#fff8ec; border-radius:12px; padding:16px 18px; text-align:center;
+    margin-bottom:14px; box-shadow:0 4px 14px var(--shadow);
+  }
+  .bingo-title{font-weight:900; font-size:calc(17px * var(--tscale)); letter-spacing:.3px; text-transform:uppercase;}
+  .bingo-sub{font-size:calc(11.5px * var(--tscale)); opacity:.9; margin-top:3px;}
+  .bingo-player{font-size:calc(13.5px * var(--tscale)); font-weight:800; margin-top:8px; font-style:italic;}
+
+  .bingo-grid{
+    display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:5px;
+    background:var(--surface); border:1px solid var(--border); border-radius:12px;
+    padding:7px; box-shadow:0 2px 8px var(--shadow);
+  }
+  .bingo-sq{
+    min-height:62px; border-radius:7px; background:var(--surface-2); border:1px solid var(--border);
+    display:flex; align-items:center; justify-content:center; text-align:center;
+    font-size:calc(8.6px * var(--tscale)); line-height:1.22; padding:4px 3px; cursor:pointer;
+    color:var(--text); font-weight:600; position:relative;
+    min-width:0; overflow-wrap:break-word; word-break:break-word;
+  }
+  .bingo-sq.free{background:var(--highlight-bg); color:var(--red-deep); font-weight:900; font-size:calc(11px * var(--tscale));}
+  .bingo-sq.marked{background:var(--red); color:#fff8ec; border-color:var(--red);}
+  .bingo-sq.marked.free{background:var(--red); color:#fff8ec;}
+
+  .bingo-progress{
+    text-align:center; font-size:calc(12.5px * var(--tscale)); color:var(--text-muted);
+    margin:12px 0; font-weight:700;
+  }
+  .bingo-switch{
+    display:block; width:100%; text-align:center; margin-top:6px; padding:10px;
+    font-size:calc(12px * var(--tscale)); color:var(--text-muted); text-decoration:underline;
+    background:none; border:none; cursor:pointer;
+  }
+
+  .bingo-win-overlay{
+    display:none; position:fixed; inset:0; z-index:200; background:var(--overlay);
+    align-items:center; justify-content:center; padding:24px;
+  }
+  .bingo-win-overlay.open{display:flex;}
+  .bingo-win-card{
+    background:var(--surface); border-radius:16px; padding:30px 26px; text-align:center;
+    max-width:340px; box-shadow:0 12px 30px rgba(0,0,0,.35); border:2px solid var(--red);
+  }
+  .bingo-win-emoji{font-size:44px; margin-bottom:6px;}
+  .bingo-win-card h2{
+    margin:0 0 10px; color:var(--red); font-size:calc(24px * var(--tscale));
+    font-weight:900; text-transform:uppercase; letter-spacing:.5px;
+  }
+  .bingo-win-card p{margin:0 0 18px; font-size:calc(14px * var(--tscale)); line-height:1.5; color:var(--text);}
+  .bingo-win-close{
+    background:var(--red); color:#fff8ec; border:none; border-radius:10px;
+    padding:11px 26px; font-size:calc(14px * var(--tscale)); font-weight:800; cursor:pointer;
+  }
+
   .placeholder{
     background:var(--placeholder-bg);
     border:1.5px dashed var(--placeholder-border);
@@ -497,6 +574,10 @@
     <button class="quicklink" data-goto="dining">
       <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3v7a2 2 0 0 0 2 2v9M7 3v9M10 3v9M17 3c-1.5 0-3 1.5-3 4.5S15.5 12 17 12v9M17 3v18"/></svg>
       <span>Restaurant suggestions</span>
+    </button>
+    <button class="quicklink" data-goto="bingo">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="17" height="17" rx="2"/><path d="M3.5 9.5h17M3.5 15h17M9.5 3.5v17M15 3.5v17"/></svg>
+      <span>Fringe bingo</span>
     </button>
     <button class="quicklink" data-goto="info">
       <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.01"/></svg>
@@ -1226,6 +1307,33 @@
   </div>
 </section>
 
+<!-- ============ BINGO ============ -->
+<section class="view" id="view-bingo">
+  <div class="page-head">
+    <h1>The "I'm Doing the Fringe Right" Bingo Card</h1>
+    <p>Congratulations! You are currently packed like a sardine into historic Old Town. Instead of complaining about your steps or your calves, let's gamify the chaos. This card tracks the best, most ridiculous, and completely accidental moments of your day. Mark your spots, dodge the street performers, and remember: if you haven't climbed a 45-degree hill today, you're on the wrong street.</p>
+    <p style="margin-top:8px; font-weight:800; color:var(--red);">Mark it off as it happens — five in a row wins!</p>
+    <p style="margin-top:4px; font-style:italic; color:var(--text-muted); font-size:calc(12px * var(--tscale));">Your squares will stay selected if you load your card from the same device.</p>
+  </div>
+
+  <div id="bingo-picker">
+    <div class="bingo-picker-note">Find your name below to load your card. If you share a first name with someone else, check the last initial.</div>
+    <input type="text" class="bingo-search" id="bingo-search" placeholder="Search your name...">
+    <div class="bingo-name-list" id="bingo-name-list"></div>
+  </div>
+
+  <div id="bingo-card-wrap" style="display:none;">
+    <div class="bingo-header">
+      <div class="bingo-title">Edinburgh Fringe Bingo</div>
+      <div class="bingo-sub">Studio Theatre &middot; 9&ndash;15 August 2026</div>
+      <div class="bingo-player" id="bingo-player-name"></div>
+    </div>
+    <div class="bingo-grid" id="bingo-grid"></div>
+    <div class="bingo-progress" id="bingo-progress"></div>
+    <button class="bingo-switch" id="bingo-switch">Not you? Switch card</button>
+  </div>
+</section>
+
 <nav class="tabbar">
   <button data-tab="home" class="active">
     <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11.5 12 4l8 7.5"/><path d="M6 10v9a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1v-9"/></svg>
@@ -1247,17 +1355,30 @@
     <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3v7a2 2 0 0 0 2 2v9M7 3v9M10 3v9M17 3c-1.5 0-3 1.5-3 4.5S15.5 12 17 12v9M17 3v18"/></svg>
     Dining
   </button>
+  <button data-tab="bingo">
+    <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="17" height="17" rx="2"/><path d="M3.5 9.5h17M3.5 15h17M9.5 3.5v17M15 3.5v17"/></svg>
+    Bingo
+  </button>
   <button data-tab="info">
     <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.01"/></svg>
     Info
   </button>
 </nav>
 
+<div class="bingo-win-overlay" id="bingo-win-overlay">
+  <div class="bingo-win-card">
+    <div class="bingo-win-emoji">🎉</div>
+    <h2>Bingo!</h2>
+    <p>Congratulations! Screenshot your card for CUE for a prize.</p>
+    <button class="bingo-win-close" id="bingo-win-close">Nice!</button>
+  </div>
+</div>
+
 <script>
 (function(){
   "use strict";
 
-  var tabs = ["home","plan","summary","museums","dining","info"];
+  var tabs = ["home","plan","summary","museums","dining","bingo","info"];
   function showTab(name){
     tabs.forEach(function(t){
       document.getElementById("view-"+t).classList.toggle("active", t === name);
@@ -1351,6 +1472,150 @@
     installTip.style.display = "none";
     try{ localStorage.setItem("std_edin_install_dismissed_v1","1"); }catch(e){}
   });
+
+
+  /* ---------- bingo ---------- */
+  var BINGO_DATA = [{"name":"Allison K.","card":["High-five a giant mascot on Victoria Street","Tried a Scotch pie or sausage roll from a bakery","Overheard two strangers arguing about a show's ending","Sharing a table with friendly strangers","The Heart of Midlothian mosaic set into the pavement","A living statue winks at a passerby","Audience interaction during a show","St Giles' Cathedral's crown steeple","Had a pint at a proper old pub","A stunning view of the Castle between buildings","A view down a close toward the Old Town skyline","Bumping into friends completely by accident","FREE","Dancing in the rain","Take a selfie at a show or event","Deliberate bad singing","Tried a deep-fried Mars bar","Traded show recommendations with a stranger in line","Scottish tablet (the candy)","Over-eager volunteer from the audience","A unicyclist or juggler on the street","Costumed performer parades through the street","Public dress rehearsal/run-through outside a venue","Bagpiper in full Scottish glory playing on the street","Had a \"chippy\" (fish and chips) from a takeaway"]},{"name":"Bianca B.","card":["A view down a close toward the Old Town skyline","Audience interaction during a show","Greyfriars Bobby statue","Had a \"chippy\" (fish and chips) from a takeaway","Tried a deep-fried Mars bar","Traded show recommendations with a stranger in line","a pint at a proper old pub","Poster with quotes from performer's mother","Fire breather or sword swallower on the street","The Scott Monument","Non-performer in full Highland dress just walking around","High-five a giant mascot on Victoria Street","FREE","Tried a Scotch pie or sausage roll from a bakery","Bumping into friends completely by accident","Super inappropriate show poster","Costumed performer parades through the street","Tried a shortbread from a bakery","A living statue winks at a passerby","St Giles' Cathedral's crown steeple","An audience member gets pulled into the show","You take an insider recommendation","Overheard two strangers arguing about a show's ending","Deacon Brodie's Tavern sign","A performer breaks the fourth wall unexpectedly"]},{"name":"Christine B.","card":["Deacon Brodie's Tavern sign","Nudity (not your own)","Tried a deep-fried Mars bar","A performer jokes about Edinburgh weather","Finding a hidden courtyard garden oasis","Had a cup of tea/coffee at a tiny caf\u00e9","High-five a giant mascot on Victoria Street","Heckler gets biggest laugh of set","Bagpiper in full Scottish glory playing on the street","Massive, upside-down inflatable purple cow","St Giles' Cathedral's crown steeple","Sharing a table with friendly strangers","FREE","The Scott Monument","Victoria Street's curved, colorful shopfronts","Stilt walker on the street","Had a \"chippy\" (fish and chips) from a takeaway","Public dress rehearsal/run-through outside a venue","Performer in crazy costume handing out show flyers","Take a selfie at a show or event","You take an insider recommendation","Had a whisky cocktail","Bumping into friends completely by accident","Traded show recommendations with a stranger in line","a pint at a proper old pub"]},{"name":"David Muse","card":["Non-performer in full Highland dress just walking around","Had a \"toastie\" or meal deal from a corner shop","Victoria Street's curved, colorful shopfronts","Overheard two strangers arguing about a show's ending","Had a pint at a proper old pub","A performer jokes about Edinburgh weather","Dancing in the rain","Impromptu traditional music session in a pub","Nudity (not your own)","A unicyclist or juggler on the street","Costumed performer parades through the street","St Giles' Cathedral's crown steeple","FREE","High-five a giant mascot on Victoria Street","Over-eager volunteer from the audience","Tried a deep-fried Mars bar","A stunning view of the Castle between buildings","Local dog wearing a tiny Fringe festival badge","Fire breather or sword swallower on the street","Deliberate bad singing","Tried a shortbread from a bakery","You take an insider recommendation","A living statue winks at a passerby","Tried tablet (the candy)","Traded show recommendations with a stranger in line"]},{"name":"David M.","card":["You take an insider recommendation","Bagpiper in full Scottish glory playing on the street","Had a pint at a proper old pub","St Giles' Cathedral's crown steeple","Public dress rehearsal/run-through outside a venue","Had a \"toastie\" or meal deal from a corner shop","Local dog wearing a tiny Fringe festival badge","Had a \"chippy\" (fish and chips) from a takeaway","Tried a Scotch pie or sausage roll from a bakery","Greyfriars Bobby statue","Chalk pavement drawing","Tried a shortbread from a bakery","FREE","A performer breaks the fourth wall unexpectedly","Overheard two strangers arguing about a show's ending","Poster with quotes from performer's mother","A living statue winks at a passerby","Fire breather or sword swallower on the street","A view down a close toward the Old Town skyline","Traded show recommendations with a stranger in line","A stunning view of the Castle between buildings","Heckler gets biggest laugh of set","Bumping into friends completely by accident","An audience member gets pulled into the show","Dancing in the rain"]},{"name":"Dean A.","card":["Had a pint at a proper old pub","You take an insider recommendation","A living statue winks at a passerby","Massive, upside-down inflatable purple cow","Audience interaction during a show","High-five a giant mascot on Victoria Street","An audience member gets pulled into the show","Public dress rehearsal/run-through outside a venue","Take a selfie at a show or event","Non-performer in full Highland dress just walking around","Sharing a table with friendly strangers","Had a \"chippy\" (fish and chips) from a takeaway","FREE","Tried Scottish tablet (the candy)","Bumping into friends completely by accident","Tried a Scotch pie or sausage roll from a bakery","Dancing in the rain","The Scott Monument","Deliberate bad singing","The Heart of Midlothian mosaic set into the pavement","Had a whisky cocktail","Fire breather or sword swallower on the street","Edinburgh Castle looming over the skyline","A kilted piper stationed at a \"photo spot\" corner","Overheard two strangers arguing about a show's ending"]},{"name":"Debbie P.","card":["The Scott Monument","Impromptu traditional music session in a pub","A performer jokes about Edinburgh weather","Had a \"toastie\" or meal deal from a corner shop","Non-performer in full Highland dress just walking around","Stilt walker on the street","Had a whisky cocktail","Chalk pavement drawing","Dancing in the rain","Public dress rehearsal/run-through outside a venue","Tried a deep-fried Mars bar","Traded show recommendations with a stranger in line","FREE","Tried a shortbread from a bakery","Over-eager volunteer from the audience","A stunning view of the Castle between buildings","Overheard two strangers arguing about a show's ending","A living statue winks at a passerby","A performer breaks the fourth wall unexpectedly","High-five a giant mascot on Victoria Street","You take an insider recommendation","Local dog wearing a tiny Fringe festival badge","Take a selfie at a show or event","Had a pint at a proper old pub","The Heart of Midlothian mosaic set into the pavement"]},{"name":"Debora R.","card":["A performer breaks the fourth wall unexpectedly","Impromptu traditional music session in a pub","Traded show recommendations with a stranger in line","Deacon Brodie's Tavern sign","Over-eager volunteer from the audience","Local dog wearing a tiny Fringe festival badge","Had a whisky cocktail","Bumping into friends completely by accident","Sharing a table with friendly strangers","Fire breather or sword swallower on the street","Tried Scottish tablet (the candy)","Had a \"chippy\" (fish and chips) from a takeaway","FREE","Had a \"toastie\" or meal deal from a corner shop","Chalk pavement drawing","Stilt walker on the street","Performer in crazy costume handing out show flyers","Non-performer in full Highland dress just walking around","Greyfriars Bobby statue","Tried a shortbread from a bakery","Audience interaction during a show","Edinburgh Castle looming over the skyline","High-five a giant mascot on Victoria Street","Nudity (not your own)","Victoria Street's curved, colorful shopfronts"]},{"name":"Drew L.","card":["Tried a deep-fried Mars bar","Fire breather or sword swallower on the street","Had a \"chippy\" (fish and chips) from a takeaway","Take a selfie at a show or event","Bagpiper in full Scottish glory playing on the street","Had a cup of tea/coffee at a tiny caf\u00e9","A kilted piper stationed at a \"photo spot\" corner","A living statue winks at a passerby","Overheard two strangers arguing about a show's ending","Greyfriars Bobby statue","Traded show recommendations with a stranger in line","Sharing a table with friendly strangers","FREE","Deliberate bad singing","Had a pint at a proper old pub","Poster with quotes from performer's mother","Chalk pavement drawing","Tried a shortbread from a bakery","Local dog wearing a tiny Fringe festival badge","Super inappropriate show poster","You take an insider recommendation","St Giles' Cathedral's crown steeple","Audience interaction during a show","Finding a hidden courtyard garden oasis","The Heart of Midlothian mosaic set into the pavement"]},{"name":"Georgann J.","card":["Audience interaction during a show","Poster with quotes from performer's mother","Bagpiper in full Scottish glory playing on the street","Had a cup of tea/coffee at a tiny caf\u00e9","Bumping into friends completely by accident","Had a \"toastie\" or meal deal from a corner shop","An audience member gets pulled into the show","Finding a hidden courtyard garden oasis","Sharing a table with friendly strangers","Over-eager volunteer from the audience","A living statue winks at a passerby","Had a pint at a proper old pub","FREE","Performer in crazy costume handing out show flyers","Victoria Street's curved, colorful shopfronts","A kilted piper stationed at a \"photo spot\" corner","Impromptu traditional music session in a pub","A stunning view of the Castle between buildings","Local dog wearing a tiny Fringe festival badge","You take an insider recommendation","High-five a giant mascot on Victoria Street","Had a whisky cocktail","Chalk pavement drawing","Tried a shortbread from a bakery","Super inappropriate show poster"]},{"name":"Jerry S.","card":["Had a cup of tea/coffee at a tiny caf\u00e9","A unicyclist or juggler on the street","You take an insider recommendation","Super inappropriate show poster","Bagpiper in full Scottish glory playing on the street","Performer in crazy costume handing out show flyers","Tried Scottish tablet (the candy)","Had a whisky cocktail","Audience interaction during a show","Deliberate bad singing","Tried a shortbread from a bakery","Tried a Scotch pie or sausage roll from a bakery","FREE","Traded show recommendations with a stranger in line","The Heart of Midlothian mosaic set into the pavement","A kilted piper stationed at a \"photo spot\" corner","Costumed performer parades through the street","Impromptu traditional music session in a pub","High-five a giant mascot on Victoria Street","A performer breaks the fourth wall unexpectedly","St Giles' Cathedral's crown steeple","Local dog wearing a tiny Fringe festival badge","Deacon Brodie's Tavern sign","Bumping into friends completely by accident","Over-eager volunteer from the audience"]},{"name":"Jo Anne G.","card":["Had a \"toastie\" or meal deal from a corner shop","High-five a giant mascot on Victoria Street","Overheard two strangers arguing about a show's ending","Local dog wearing a tiny Fringe festival badge","Massive, upside-down inflatable purple cow","Costumed performer parades through the street","Traded show recommendations with a stranger in line","Scottish tablet (the candy)","An audience member gets pulled into the show","Had a \"chippy\" (fish and chips) from a takeaway","A stunning view of the Castle between buildings","Edinburgh Castle looming over the skyline","FREE","Tried a deep-fried Mars bar","A unicyclist or juggler on the street","Public dress rehearsal/run-through outside a venue","Over-eager volunteer from the audience","You take an insider recommendation","The Heart of Midlothian mosaic set into the pavement","Tried a shortbread from a bakery","A view down a close toward the Old Town skyline","Nudity (not your own)","Poster with quotes from performer's mother","Super inappropriate show poster","Impromptu traditional music session in a pub"]},{"name":"Jon W.","card":["A living statue winks at a passerby","The Heart of Midlothian mosaic set into the pavement","Chalk pavement drawing","A performer jokes about Edinburgh weather","The Scott Monument","A view down a close toward the Old Town skyline","Bumping into friends completely by accident","Had a whisky cocktail","Poster with quotes from performer's mother","Public dress rehearsal/run-through outside a venue","Deacon Brodie's Tavern sign","Had a \"toastie\" or meal deal from a corner shop","FREE","A unicyclist or juggler on the street","High-five a giant mascot on Victoria Street","Overheard two strangers arguing about a show's ending","You take an insider recommendation","Traded show recommendations with a stranger in line","Tried a deep-fried Mars bar","Take a selfie at a show or event","Greyfriars Bobby statue","An audience member gets pulled into the show","Costumed performer parades through the street","Had a \"chippy\" (fish and chips) from a takeaway","Tried a shortbread from a bakery"]},{"name":"Judy P.","card":["Fire breather or sword swallower on the street","High-five a giant mascot on Victoria Street","Tried a Scotch pie or sausage roll from a bakery","Tried a deep-fried Mars bar","Sharing a table with friendly strangers","An audience member gets pulled into the show","Had a \"chippy\" (fish and chips) from a takeaway","Deliberate bad singing","The Scott Monument","Edinburgh Castle looming over the skyline","Traded show recommendations with a stranger in line","a pint at a proper old pub","FREE","Deacon Brodie's Tavern sign","Heckler gets biggest laugh of set","A living statue winks at a passerby","A view down a close toward the Old Town skyline","Impromptu traditional music session in a pub","A unicyclist or juggler on the street","Local dog wearing a tiny Fringe festival badge","A performer jokes about Edinburgh weather","Bumping into friends completely by accident","Performer in crazy costume handing out show flyers","Chalk pavement drawing","Had a whisky cocktail"]},{"name":"Kailee B.","card":["Public dress rehearsal/run-through outside a venue","A performer jokes about Edinburgh weather","Bumping into friends completely by accident","Victoria Street's curved, colorful shopfronts","Finding a hidden courtyard garden oasis","St Giles' Cathedral's crown steeple","A unicyclist or juggler on the street","Had a pint at a proper old pub","Over-eager volunteer from the audience","Had a whisky cocktail","The Heart of Midlothian mosaic set into the pavement","Poster with quotes from performer's mother","FREE","Stilt walker on the street","Impromptu traditional music session in a pub","Tried Scottish tablet (the candy)","Sharing a table with friendly strangers","Massive, upside-down inflatable purple cow","Traded show recommendations with a stranger in line","Had a \"toastie\" or meal deal from a corner shop","Local dog wearing a tiny Fringe festival badge","You take an insider recommendation","Chalk pavement drawing","Tried a Scotch pie or sausage roll from a bakery","Nudity (not your own)"]},{"name":"Kazuko U.","card":["Overheard two strangers arguing about a show's ending","Sharing a table with friendly strangers","Costumed performer parades through the street","High-five a giant mascot on Victoria Street","A performer breaks the fourth wall unexpectedly","St Giles' Cathedral's crown steeple","Tried a deep-fried Mars bar","A view down a close toward the Old Town skyline","Had a \"toastie\" or meal deal from a corner shop","Had a pint at a proper old pub","Impromptu traditional music session in a pub","Tried a Scotch pie or sausage roll from a bakery","FREE","Performer in crazy costume handing out show flyers","An audience member gets pulled into the show","A unicyclist or juggler on the street","Traded show recommendations with a stranger in line","Non-performer in full Highland dress just walking around","Had a \"chippy\" (fish and chips) from a takeaway","A performer jokes about Edinburgh weather","Massive, upside-down inflatable purple cow","Edinburgh Castle looming over the skyline","Over-eager volunteer from the audience","You take an insider recommendation","Deacon Brodie's Tavern sign"]},{"name":"Laura D.","card":["Had a \"toastie\" or meal deal from a corner shop","Bumping into friends completely by accident","Had a \"chippy\" (fish and chips) from a takeaway","A view down a close toward the Old Town skyline","A performer jokes about Edinburgh weather","You take an insider recommendation","Bagpiper in full Scottish glory playing on the street","Sharing a table with friendly strangers","An audience member gets pulled into the show","Had a whisky cocktail","Over-eager volunteer from the audience","Greyfriars Bobby statue","FREE","Non-performer in full Highland dress just walking around","Impromptu traditional music session in a pub","Fire breather or sword swallower on the street","Tried a deep-fried Mars bar","A stunning view of the Castle between buildings","Tried a shortbread from a bakery","Deliberate bad singing","Local dog wearing a tiny Fringe festival badge","High-five a giant mascot on Victoria Street","A kilted piper stationed at a \"photo spot\" corner","Costumed performer parades through the street","A unicyclist or juggler on the street"]},{"name":"Laura H.","card":["Deliberate bad singing","Tried a shortbread from a bakery","High-five a giant mascot on Victoria Street","Local dog wearing a tiny Fringe festival badge","A unicyclist or juggler on the street","Tried a deep-fried Mars bar","The Heart of Midlothian mosaic set into the pavement","Poster with quotes from performer's mother","Greyfriars Bobby statue","Overheard two strangers arguing about a show's ending","Bagpiper in full Scottish glory playing on the street","Dancing in the rain","FREE","Had a \"toastie\" or meal deal from a corner shop","Fire breather or sword swallower on the street","A kilted piper stationed at a \"photo spot\" corner","You take an insider recommendation","Had a pint at a proper old pub","Nudity (not your own)","Massive, upside-down inflatable purple cow","Impromptu traditional music session in a pub","Super inappropriate show poster","Had a cup of tea/coffee at a tiny caf\u00e9","Over-eager volunteer from the audience","Bumping into friends completely by accident"]},{"name":"Lori M.","card":["Audience interaction during a show","An audience member gets pulled into the show","Had a whisky cocktail","Bumping into friends completely by accident","Had a \"toastie\" or meal deal from a corner shop","Poster with quotes from performer's mother","Costumed performer parades through the street","A kilted piper stationed at a \"photo spot\" corner","Sharing a table with friendly strangers","Nudity (not your own)","Public dress rehearsal/run-through outside a venue","Massive, upside-down inflatable purple cow","FREE","Had a pint at a proper old pub","The Scott Monument","Tried a shortbread from a bakery","A unicyclist or juggler on the street","Local dog wearing a tiny Fringe festival badge","A living statue winks at a passerby","Had a cup of tea/coffee at a tiny caf\u00e9","The Heart of Midlothian mosaic set into the pavement","Overheard two strangers arguing about a show's ending","Edinburgh Castle looming over the skyline","High-five a giant mascot on Victoria Street","A stunning view of the Castle between buildings"]},{"name":"Margaret H.","card":["Had a \"toastie\" or meal deal from a corner shop","Chalk pavement drawing","Deliberate bad singing","Deacon Brodie's Tavern sign","St Giles' Cathedral's crown steeple","A living statue winks at a passerby","Sharing a table with friendly strangers","Overheard two strangers arguing about a show's ending","Tried a shortbread from a bakery","Had a \"chippy\" (fish and chips) from a takeaway","An audience member gets pulled into the show","Super inappropriate show poster","FREE","The Scott Monument","A view down a close toward the Old Town skyline","Had a whisky cocktail","Nudity (not your own)","Local dog wearing a tiny Fringe festival badge","Had a pint at a proper old pub","Performer in crazy costume handing out show flyers","You take an insider recommendation","Non-performer in full Highland dress just walking around","High-five a giant mascot on Victoria Street","Heckler gets biggest laugh of set","A stunning view of the Castle between buildings"]},{"name":"Nan B.","card":["Local dog wearing a tiny Fringe festival badge","Audience interaction during a show","Traded show recommendations with a stranger in line","High-five a giant mascot on Victoria Street","Heckler gets biggest laugh of set","Chalk pavement drawing","Tried a Scotch pie or sausage roll from a bakery","You take an insider recommendation","Super inappropriate show poster","Had a pint at a proper old pub","Sharing a table with friendly strangers","Deliberate bad singing","FREE","Had a whisky cocktail","Edinburgh Castle looming over the skyline","Tried a shortbread from a bakery","Costumed performer parades through the street","Stilt walker on the street","Had a cup of tea/coffee at a tiny caf\u00e9","Impromptu traditional music session in a pub","A kilted piper stationed at a \"photo spot\" corner","Deacon Brodie's Tavern sign","Poster with quotes from performer's mother","Public dress rehearsal/run-through outside a venue","Finding a hidden courtyard garden oasis"]},{"name":"Natsu P.","card":["Sharing a table with friendly strangers","Bagpiper in full Scottish glory playing on the street","Overheard two strangers arguing about a show's ending","Greyfriars Bobby statue","A living statue winks at a passerby","Non-performer in full Highland dress just walking around","Traded show recommendations with a stranger in line","Take a selfie at a show or event","The Scott Monument","Tried a Scotch pie or sausage roll from a bakery","Public dress rehearsal/run-through outside a venue","Audience interaction during a show","FREE","A kilted piper stationed at a \"photo spot\" corner","Over-eager volunteer from the audience","Had a whisky cocktail","Had a \"chippy\" (fish and chips) from a takeaway","Finding a hidden courtyard garden oasis","Super inappropriate show poster","Local dog wearing a tiny Fringe festival badge","Bumping into friends completely by accident","Had a cup of tea/coffee at a tiny caf\u00e9","An audience member gets pulled into the show","Tried a deep-fried Mars bar","Victoria Street's curved, colorful shopfronts"]},{"name":"Pamela P.","card":["Poster with quotes from performer's mother","A stunning view of the Castle between buildings","A performer jokes about Edinburgh weather","Tried a Scotch pie or sausage roll from a bakery","Public dress rehearsal/run-through outside a venue","Had a cup of tea/coffee at a tiny caf\u00e9","You take an insider recommendation","Chalk pavement drawing","Stilt walker on the street","The Scott Monument","Local dog wearing a tiny Fringe festival badge","Costumed performer parades through the street","FREE","Take a selfie at a show or event","Had a \"chippy\" (fish and chips) from a takeaway","Super inappropriate show poster","Bumping into friends completely by accident","Edinburgh Castle looming over the skyline","Traded show recommendations with a stranger in line","Tried a deep-fried Mars bar","Dancing in the rain","Overheard two strangers arguing about a show's ending","Nudity (not your own)","Tried a shortbread from a bakery","A kilted piper stationed at a \"photo spot\" corner"]},{"name":"Rafael H.","card":["Traded show recommendations with a stranger in line","Public dress rehearsal/run-through outside a venue","Had a pint at a proper old pub","Overheard two strangers arguing about a show's ending","Tried a deep-fried Mars bar","An audience member gets pulled into the show","Poster with quotes from performer's mother","Deliberate bad singing","Non-performer in full Highland dress just walking around","High-five a giant mascot on Victoria Street","A living statue winks at a passerby","Greyfriars Bobby statue","FREE","Edinburgh Castle looming over the skyline","Dancing in the rain","Had a \"chippy\" (fish and chips) from a takeaway","Bagpiper in full Scottish glory playing on the street","Tried Scottish tablet (the candy)","Heckler gets biggest laugh of set","Performer in crazy costume handing out show flyers","Local dog wearing a tiny Fringe festival badge","Had a \"toastie\" or meal deal from a corner shop","You take an insider recommendation","Finding a hidden courtyard garden oasis","St Giles' Cathedral's crown steeple"]},{"name":"Rebecca L.","card":["A view down a close toward the Old Town skyline","Audience interaction during a show","Tried a shortbread from a bakery","Greyfriars Bobby statue","Fire breather or sword swallower on the street","Sharing a table with friendly strangers","Massive, upside-down inflatable purple cow","High-five a giant mascot on Victoria Street","You take an insider recommendation","Non-performer in full Highland dress just walking around","Heckler gets biggest laugh of set","Tried Scottish tablet (the candy)","FREE","Take a selfie at a show or event","Dancing in the rain","Had a whisky cocktail","Chalk pavement drawing","St Giles' Cathedral's crown steeple","Overheard two strangers arguing about a show's ending","Had a \"chippy\" (fish and chips) from a takeaway","Had a \"toastie\" or meal deal from a corner shop","Traded show recommendations with a stranger in line","Stilt walker on the street","Finding a hidden courtyard garden oasis","Nudity (not your own)"]},{"name":"Richard H.","card":["Tried a deep-fried Mars bar","Heckler gets biggest laugh of set","Super inappropriate show poster","Had a cup of tea/coffee at a tiny caf\u00e9","High-five a giant mascot on Victoria Street","Sharing a table with friendly strangers","A unicyclist or juggler on the street","A stunning view of the Castle between buildings","Stilt walker on the street","Take a selfie at a show or event","Had a pint at a proper old pub","Deliberate bad singing","FREE","Traded show recommendations with a stranger in line","Performer in crazy costume handing out show flyers","Victoria Street's curved, colorful shopfronts","Tried Scottish tablet (the candy)","Impromptu traditional music session in a pub","Dancing in the rain","Audience interaction during a show","Local dog wearing a tiny Fringe festival badge","Fire breather or sword swallower on the street","The Scott Monument","Tried a shortbread from a bakery","Overheard two strangers arguing about a show's ending"]},{"name":"Sandy W.","card":["Had a \"chippy\" (fish and chips) from a takeaway","Bumping into friends completely by accident","Deacon Brodie's Tavern sign","Tried a shortbread from a bakery","A performer breaks the fourth wall unexpectedly","Nudity (not your own)","A stunning view of the Castle between buildings","Tried tablet (the candy)","Traded show recommendations with a stranger in line","A performer jokes about Edinburgh weather","Tried a Scotch pie or sausage roll from a bakery","Super inappropriate show poster","FREE","Non-performer in full Highland dress just walking around","Overheard two strangers arguing about a show's ending","Heckler gets biggest laugh of set","Fire breather or sword swallower on the street","You take an insider recommendation","A kilted piper stationed at a \"photo spot\" corner","A unicyclist or juggler on the street","The Heart of Midlothian mosaic set into the pavement","Victoria Street's curved, colorful shopfronts","Had a whisky cocktail","Sharing a table with friendly strangers","Massive, upside-down inflatable purple cow"]},{"name":"Sarah D.","card":["An audience member gets pulled into the show","Heckler gets biggest laugh of set","The Scott Monument","Victoria Street's curved, colorful shopfronts","Non-performer in full Highland dress just walking around","A kilted piper stationed at a \"photo spot\" corner","Massive, upside-down inflatable purple cow","Had a \"toastie\" or meal deal from a corner shop","Overheard two strangers arguing about a show's ending","Edinburgh Castle looming over the skyline","A performer jokes about Edinburgh weather","Bagpiper in full Scottish glory playing on the street","FREE","Tried a Scotch pie or sausage roll from a bakery","Had a whisky cocktail","Sharing a table with friendly strangers","Had a cup of tea/coffee at a tiny caf\u00e9","Take a selfie at a show or event","Bumping into friends completely by accident","High-five a giant mascot on Victoria Street","Deacon Brodie's Tavern sign","Had a \"chippy\" (fish and chips) from a takeaway","You take an insider recommendation","Super inappropriate show poster","Public dress rehearsal/run-through outside a venue"]},{"name":"Steve V.","card":["Heckler gets biggest laugh of set","Public dress rehearsal/run-through outside a venue","High-five a giant mascot on Victoria Street","Fire breather or sword swallower on the street","Bumping into friends completely by accident","Audience interaction during a show","Non-performer in full Highland dress just walking around","You take an insider recommendation","Super inappropriate show poster","Over-eager volunteer from the audience","Tried Scottish tablet (the candy)","A view down a close toward the Old Town skyline","FREE","Deacon Brodie's Tavern sign","Had a pint at a proper old pub","Overheard two strangers arguing about a show's ending","A living statue winks at a passerby","Had a \"chippy\" (fish and chips) from a takeaway","Local dog wearing a tiny Fringe festival badge","Deliberate bad singing","Victoria Street's curved, colorful shopfronts","A kilted piper stationed at a \"photo spot\" corner","Had a cup of tea/coffee at a tiny caf\u00e9","Tried a deep-fried Mars bar","St Giles' Cathedral's crown steeple"]},{"name":"Susan P.","card":["Performer in crazy costume handing out show flyers","A performer jokes about Edinburgh weather","An audience member gets pulled into the show","Deacon Brodie's Tavern sign","You take an insider recommendation","A kilted piper stationed at a \"photo spot\" corner","Chalk pavement drawing","A living statue winks at a passerby","Had a \"chippy\" (fish and chips) from a takeaway","Had a pint at a proper old pub","Bumping into friends completely by accident","Tried a shortbread from a bakery","FREE","Had a whisky cocktail","Audience interaction during a show","A stunning view of the Castle between buildings","A view down a close toward the Old Town skyline","Deliberate bad singing","Bagpiper in full Scottish glory playing on the street","A unicyclist or juggler on the street","The Scott Monument","High-five a giant mascot on Victoria Street","Traded show recommendations with a stranger in line","Overheard two strangers arguing about a show's ending","Tried a deep-fried Mars bar"]},{"name":"Terry T.","card":["Bumping into friends completely by accident","Take a selfie at a show or event","A performer breaks the fourth wall unexpectedly","The Heart of Midlothian mosaic set into the pavement","Tried a shortbread from a bakery","Impromptu traditional music session in a pub","Edinburgh Castle looming over the skyline","Bagpiper in full Scottish glory playing on the street","Super inappropriate show poster","Had a cup of tea/coffee at a tiny caf\u00e9","Had a \"toastie\" or meal deal from a corner shop","High-five a giant mascot on Victoria Street","FREE","Poster with quotes from performer's mother","Sharing a table with friendly strangers","Costumed performer parades through the street","Massive, upside-down inflatable purple cow","Overheard two strangers arguing about a show's ending","Dancing in the rain","Local dog wearing a tiny Fringe festival badge","Had a pint at a proper old pub","Tried Scottish tablet (the candy)","Audience interaction during a show","St Giles' Cathedral's crown steeple","Fire breather or sword swallower on the street"]},{"name":"Theresa S.","card":["Local dog wearing a tiny Fringe festival badge","A unicyclist or juggler on the street","Greyfriars Bobby statue","A performer breaks the fourth wall unexpectedly","The Scott Monument","Had a \"chippy\" (fish and chips) from a takeaway","Dancing in the rain","Tried a shortbread from a bakery","Tried a Scotch pie or sausage roll from a bakery","You take an insider recommendation","Overheard two strangers arguing about a show's ending","St Giles' Cathedral's crown steeple","FREE","Sharing a table with friendly strangers","Nudity (not your own)","Fire breather or sword swallower on the street","Deliberate bad singing","A view down a close toward the Old Town skyline","Had a pint at a proper old pub","Had a \"toastie\" or meal deal from a corner shop","High-five a giant mascot on Victoria Street","Super inappropriate show poster","An audience member gets pulled into the show","Performer in crazy costume handing out show flyers","Stilt walker on the street"]},{"name":"Tim M.","card":["Tried a Scotch pie or sausage roll from a bakery","Had a pint at a proper old pub","Local dog wearing a tiny Fringe festival badge","A view down a close toward the Old Town skyline","Bumping into friends completely by accident","A performer breaks the fourth wall unexpectedly","Greyfriars Bobby statue","A living statue winks at a passerby","Sharing a table with friendly strangers","Traded show recommendations with a stranger in line","Had a \"chippy\" (fish and chips) from a takeaway","Tried Scottish tablet (the candy)","FREE","The Scott Monument","Bagpiper in full Scottish glory playing on the street","Over-eager volunteer from the audience","Overheard two strangers arguing about a show's ending","Impromptu traditional music session in a pub","Costumed performer parades through the street","Audience interaction during a show","Heckler gets biggest laugh of set","Edinburgh Castle looming over the skyline","Had a cup of tea/coffee at a tiny caf\u00e9","Massive, upside-down inflatable purple cow","Super inappropriate show poster"]},{"name":"Tim P.","card":["The Heart of Midlothian mosaic set into the pavement","Tried a deep-fried Mars bar","Overheard two strangers arguing about a show's ending","Victoria Street's curved, colorful shopfronts","A living statue winks at a passerby","Stilt walker on the street","Deliberate bad singing","Poster with quotes from performer's mother","Had a \"chippy\" (fish and chips) from a takeaway","Dancing in the rain","Greyfriars Bobby statue","Tried Scottish tablet (the candy)","FREE","Non-performer in full Highland dress just walking around","High-five a giant mascot on Victoria Street","Traded show recommendations with a stranger in line","Super inappropriate show poster","Bagpiper in full Scottish glory playing on the street","Nudity (not your own)","Tried a shortbread from a bakery","A performer breaks the fourth wall unexpectedly","Bumping into friends completely by accident","Sharing a table with friendly strangers","Had a cup of tea/coffee at a tiny caf\u00e9","The Scott Monument"]},{"name":"Tina S.","card":["Had a whisky cocktail","Dancing in the rain","Massive, upside-down inflatable purple cow","A unicyclist or juggler on the street","High-five a giant mascot on Victoria Street","Fire breather or sword swallower on the street","A living statue winks at a passerby","Tried a shortbread from a bakery","The Heart of Midlothian mosaic set into the pavement","Local dog wearing a tiny Fringe festival badge","Tried a Scotch pie or sausage roll from a bakery","Victoria Street's curved, colorful shopfronts","FREE","Traded show recommendations with a stranger in line","A stunning view of the Castle between buildings","Greyfriars Bobby statue","You take an insider recommendation","Tried a deep-fried Mars bar","Sharing a table with friendly strangers","Audience interaction during a show","Heckler gets biggest laugh of set","A performer jokes about Edinburgh weather","A performer breaks the fourth wall unexpectedly","Had a \"toastie\" or meal deal from a corner shop","Performer in crazy costume handing out show flyers"]},{"name":"Yoshi U.","card":["Finding a hidden courtyard garden oasis","Tried a shortbread from a bakery","Dancing in the rain","Impromptu traditional music session in a pub","Deliberate bad singing","Public dress rehearsal/run-through outside a venue","A performer breaks the fourth wall unexpectedly","Take a selfie at a show or event","A view down a close toward the Old Town skyline","Had a \"toastie\" or meal deal from a corner shop","Chalk pavement drawing","Had a \"chippy\" (fish and chips) from a takeaway","FREE","Overheard two strangers arguing about a show's ending","Had a pint at a proper old pub","Tried a deep-fried Mars bar","Fire breather or sword swallower on the street","A living statue winks at a passerby","You take an insider recommendation","Traded show recommendations with a stranger in line","Super inappropriate show poster","High-five a giant mascot on Victoria Street","A stunning view of the Castle between buildings","Sharing a table with friendly strangers","Poster with quotes from performer's mother"]}]
+;
+  var BINGO_LINES = [
+    [0,1,2,3,4],[5,6,7,8,9],[10,11,12,13,14],[15,16,17,18,19],[20,21,22,23,24],
+    [0,5,10,15,20],[1,6,11,16,21],[2,7,12,17,22],[3,8,13,18,23],[4,9,14,19,24],
+    [0,6,12,18,24],[4,8,12,16,20]
+  ];
+  var bingoName = null;
+  var bingoMarks = [];
+  var bingoCelebrated = [];
+
+  function bingoKey(suffix){ return "std_edin_bingo_" + suffix + "_v1"; }
+  function bingoStorageSafe(name){ return name.replace(/[^a-z0-9]/gi, "_"); }
+
+  function bingoFindEntry(name){
+    for (var i = 0; i < BINGO_DATA.length; i++){
+      if (BINGO_DATA[i].name === name) return BINGO_DATA[i];
+    }
+    return null;
+  }
+
+  function loadBingoState(name){
+    var safe = bingoStorageSafe(name);
+    var marks = [];
+    var celebrated = [];
+    try{
+      marks = JSON.parse(localStorage.getItem(bingoKey("marks_" + safe)) || "[]");
+    }catch(e){}
+    try{
+      celebrated = JSON.parse(localStorage.getItem(bingoKey("celebrated_" + safe)) || "[]");
+    }catch(e){}
+    if (!Array.isArray(marks) || marks.length !== 25){
+      marks = new Array(25).fill(false);
+      marks[12] = true;
+    }
+    bingoMarks = marks;
+    bingoCelebrated = Array.isArray(celebrated) ? celebrated : [];
+  }
+
+  function saveBingoState(name){
+    var safe = bingoStorageSafe(name);
+    try{
+      localStorage.setItem(bingoKey("marks_" + safe), JSON.stringify(bingoMarks));
+      localStorage.setItem(bingoKey("celebrated_" + safe), JSON.stringify(bingoCelebrated));
+    }catch(e){}
+  }
+
+  function renderBingoNameList(filter){
+    var list = document.getElementById("bingo-name-list");
+    var f = (filter || "").trim().toLowerCase();
+    var matches = BINGO_DATA.filter(function(d){
+      return d.name.toLowerCase().indexOf(f) !== -1;
+    });
+    if (!matches.length){
+      list.innerHTML = '<div class="bingo-name-empty">No names match. Try just your first name.</div>';
+      return;
+    }
+    list.innerHTML = matches.map(function(d){
+      return '<button class="bingo-name-row" data-name="' + d.name.replace(/"/g,"&quot;") + '">' + d.name + '</button>';
+    }).join("");
+  }
+
+  function renderBingoGrid(){
+    var entry = bingoFindEntry(bingoName);
+    if (!entry) return;
+    document.getElementById("bingo-player-name").textContent = bingoName + "\u2019s Card";
+    var grid = document.getElementById("bingo-grid");
+    grid.innerHTML = entry.card.map(function(text, i){
+      var isFree = (i === 12);
+      var marked = bingoMarks[i];
+      var cls = "bingo-sq" + (isFree ? " free" : "") + (marked ? " marked" : "");
+      return '<div class="' + cls + '" data-idx="' + i + '">' + text + '</div>';
+    }).join("");
+    updateBingoProgress();
+  }
+
+  function updateBingoProgress(){
+    var count = bingoMarks.filter(Boolean).length;
+    document.getElementById("bingo-progress").textContent = count + " of 25 squares marked";
+  }
+
+  function checkBingoWin(){
+    var newlyComplete = false;
+    BINGO_LINES.forEach(function(line, li){
+      var complete = line.every(function(i){ return bingoMarks[i]; });
+      if (complete && bingoCelebrated.indexOf(li) === -1){
+        bingoCelebrated.push(li);
+        newlyComplete = true;
+      }
+    });
+    if (newlyComplete){
+      document.getElementById("bingo-win-overlay").classList.add("open");
+    }
+  }
+
+  function selectBingoName(name){
+    bingoName = name;
+    try{ localStorage.setItem(bingoKey("name"), name); }catch(e){}
+    loadBingoState(name);
+    document.getElementById("bingo-picker").style.display = "none";
+    document.getElementById("bingo-card-wrap").style.display = "block";
+    renderBingoGrid();
+  }
+
+  document.getElementById("bingo-search").addEventListener("input", function(e){
+    renderBingoNameList(e.target.value);
+  });
+  document.getElementById("bingo-name-list").addEventListener("click", function(e){
+    var btn = e.target.closest(".bingo-name-row");
+    if (!btn) return;
+    selectBingoName(btn.dataset.name);
+  });
+  document.getElementById("bingo-grid").addEventListener("click", function(e){
+    var sq = e.target.closest(".bingo-sq");
+    if (!sq) return;
+    var idx = parseInt(sq.dataset.idx, 10);
+    if (idx === 12) return;
+    bingoMarks[idx] = !bingoMarks[idx];
+    sq.classList.toggle("marked", bingoMarks[idx]);
+    updateBingoProgress();
+    saveBingoState(bingoName);
+    checkBingoWin();
+    if (bingoCelebrated.length) saveBingoState(bingoName);
+  });
+  document.getElementById("bingo-switch").addEventListener("click", function(){
+    document.getElementById("bingo-card-wrap").style.display = "none";
+    document.getElementById("bingo-picker").style.display = "block";
+    document.getElementById("bingo-search").value = "";
+    renderBingoNameList("");
+  });
+  document.getElementById("bingo-win-close").addEventListener("click", function(){
+    document.getElementById("bingo-win-overlay").classList.remove("open");
+  });
+
+  renderBingoNameList("");
+  try{
+    var savedBingoName = localStorage.getItem(bingoKey("name"));
+    if (savedBingoName && bingoFindEntry(savedBingoName)){
+      selectBingoName(savedBingoName);
+    }
+  }catch(e){}
 
   try{
     var savedTab = localStorage.getItem("std_edin_tab_v1");
