@@ -318,8 +318,8 @@
     font-size:calc(11px * var(--tscale)); text-transform:uppercase; letter-spacing:1px;
     color:var(--red); font-weight:800; margin-bottom:6px;
   }
-  .suggest-item{padding:9px 0; border-top:1px solid var(--border);}
-  .suggest-item:first-of-type{border-top:none;}
+  .suggest-item{padding:9px 0;}
+  .suggest-item + .suggest-item{border-top:1px solid var(--border);}
   .suggest-time{font-weight:900; color:var(--text); font-size:calc(14.5px * var(--tscale));}
   .suggest-title{font-weight:800; font-style:italic; color:var(--blue); font-size:calc(14px * var(--tscale)); margin:1px 0;}
   .suggest-venue{font-size:calc(12.5px * var(--tscale)); color:var(--text-muted); font-style:italic;}
@@ -644,7 +644,7 @@
       <div class="day-quote">"Edinburgh in August is the only place to be. It's a hotbed of genius, a marketplace of ideas, and an absolute circus."<span>— Billy Connolly, Actor</span></div>
       <div class="item"><span>Various arrivals at Edinburgh Airport — transfer to Old Town and The Scotsman Hotel</span></div>
       <div class="item"><span><b>Options while waiting for check-in</b> — stretch your legs and learn the neighborhood.<br><br><b>1st Option:</b> Self-guided walkabout exploring the Royal Mile, learning more about Old Town. Gain a deeper historical perspective and appreciation of Edinburgh (witches and all!).<br><br><b>2nd Option:</b> Self-guided walkabout of the Fringe, learning a bit of history about the festival, checking out some of the venues, and gaining a better understanding of how the Fringe works. Guide booklets provided.</span></div>
-      <div class="suggest-block" style="margin-top:20px; padding-top:0; border-top:none;">
+      <div class="suggest-block" style="margin-top:20px; padding-top:0; border-top:none; padding-bottom:9px; border-bottom:1px solid var(--border);">
         <div class="suggest-label" style="color:var(--text); text-decoration:none; text-transform:none; letter-spacing:normal; font-size:calc(13.5px * var(--tscale)); font-weight:700;">3rd Option: David's Show Suggestion</div>
         <div class="suggest-item">
           <div class="suggest-time">1:00–2:20 PM</div>
