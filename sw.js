@@ -1,4 +1,4 @@
-const CACHE = "studio-edinburgh-trip-v1";
+const CACHE = "studio-edinburgh-trip-v2";
 const ASSETS = [
   "./",
   "./index.html",
@@ -44,6 +44,26 @@ self.addEventListener("activate", (event) => {
 
 self.addEventListener("fetch", (event) => {
   if (event.request.method !== "GET") return;
+
+  // Page navigations and index.html: always try the network first so
+  // edits show up right away; fall back to the cached copy if offline.
+  const isPage = event.request.mode === "navigate" || event.request.url.endsWith("index.html");
+  if (isPage) {
+    event.respondWith(
+      fetch(event.request)
+        .then((response) => {
+          if (response && response.ok) {
+            const copy = response.clone();
+            caches.open(CACHE).then((cache) => cache.put(event.request, copy));
+          }
+          return response;
+        })
+        .catch(() => caches.match(event.request))
+    );
+    return;
+  }
+
+  // Everything else (images, icons, manifest): cache-first, refresh in background.
   event.respondWith(
     caches.match(event.request).then((cached) => {
       const fetchPromise = fetch(event.request)
